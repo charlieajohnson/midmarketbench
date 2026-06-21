@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getRepository } from "@/lib/repo";
+import { siteUrl } from "@/lib/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
   const repo = getRepository();
   const [models, cases, tasks] = await Promise.all([repo.getModels(), repo.getCases(), repo.getTasks()]);
   const paths = [
@@ -15,5 +15,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...cases.map((item) => `/cases/${item.slug}`),
     ...tasks.map((item) => `/tasks/${item.key}`),
   ];
-  return paths.map((path) => ({ url: `${base}${path}`, lastModified: new Date("2026-06-21") }));
+  return paths.map((path) => ({ url: `${siteUrl}${path}`, lastModified: new Date("2026-06-21") }));
 }

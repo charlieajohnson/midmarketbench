@@ -2,6 +2,9 @@
 
 MidMarketBench evaluates whether frontier AI models can produce useful investment work for European lower-mid-market B2B software workflows.
 
+- Live product: https://midmarketbench.vercel.app
+- Source: https://github.com/charlieajohnson/midmarketbench
+
 This repository is the pass-one product shell: a fully wired public frontend, read-only API, typed synthetic case data, deterministic score aggregation and a Supabase schema for the operational benchmark. It does not run providers or claim observed model performance.
 
 ## Run locally

@@ -1,0 +1,80 @@
+import type { Dimension } from "@/lib/types";
+
+export const dimensions: Dimension[] = [
+  {
+    key: "grounding",
+    label: "Grounding",
+    shortLabel: "G",
+    weight: 0.15,
+    description: "Claims are supported by packet evidence or clearly marked as inference.",
+    high: "Specific evidence, disciplined attribution and no invented facts.",
+    low: "Generic claims, hallucinated facts or management language repeated as truth.",
+  },
+  {
+    key: "commercial_judgement",
+    label: "Commercial judgement",
+    shortLabel: "CJ",
+    weight: 0.2,
+    description: "Identifies what matters economically and strategically to the deal.",
+    high: "Prioritises revenue quality, durability and decision impact.",
+    low: "Treats all issues equally and misses the business model's economic engine.",
+  },
+  {
+    key: "scepticism",
+    label: "Scepticism",
+    shortLabel: "Sc",
+    weight: 0.15,
+    description: "Challenges weak claims, inflated metrics and convenient narratives.",
+    high: "Tests TAM, retention, ARR definitions and internal contradictions.",
+    low: "Accepts the CIM framing and assumes favourable interpretations.",
+  },
+  {
+    key: "numerical_sanity",
+    label: "Numerical sanity",
+    shortLabel: "Num",
+    weight: 0.15,
+    description: "Interprets and reconciles financial and operating data correctly.",
+    high: "Connects cohorts, concentration, ARR bridges and revenue mix.",
+    low: "Confuses metrics, ignores tables or makes arithmetic errors.",
+  },
+  {
+    key: "risk_discovery",
+    label: "Risk discovery",
+    shortLabel: "Risk",
+    weight: 0.15,
+    description: "Finds hidden and second-order risks across the packet.",
+    high: "Connects evidence across files and ranks risks by severity.",
+    low: "Lists generic risks and misses disguised business model weakness.",
+  },
+  {
+    key: "question_generation",
+    label: "Question generation",
+    shortLabel: "Q",
+    weight: 0.1,
+    description: "Asks the next questions most likely to change the recommendation.",
+    high: "Specific, answerable, prioritised and disconfirmatory questions.",
+    low: "Long, generic diligence checklists with no decision hierarchy.",
+  },
+  {
+    key: "european_context",
+    label: "European context",
+    shortLabel: "EU",
+    weight: 0.05,
+    description: "Accounts for fragmented markets, regulation, language and procurement.",
+    high: "Avoids US category assumptions and tests country-level repeatability.",
+    low: "Treats Europe as one market and overstates reachable scale.",
+  },
+  {
+    key: "output_usefulness",
+    label: "Output usefulness",
+    shortLabel: "Use",
+    weight: 0.05,
+    description: "Produces material a deal team can reuse with limited editing.",
+    high: "Concise, structured, memo-ready and explicit about next actions.",
+    low: "Verbose, generic and operationally difficult to reuse.",
+  },
+];
+
+export const dimensionWeights = Object.fromEntries(
+  dimensions.map((dimension) => [dimension.key, dimension.weight]),
+) as Record<(typeof dimensions)[number]["key"], number>;

@@ -366,9 +366,6 @@ button {
   border-collapse: collapse;
 }
 .leaderboard th {
-  position: sticky;
-  z-index: 2;
-  top: 66px;
   background: var(--color-surface);
   color: var(--color-ink-muted);
   font-size: 0.66rem;

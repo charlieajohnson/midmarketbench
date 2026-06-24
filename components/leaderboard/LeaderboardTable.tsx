@@ -81,6 +81,9 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
                     </div>
                   ))}
                 </div>
+                <div className="rank-card-meta">
+                  <Badge>{row.mode}</Badge>
+                </div>
                 <details className="rank-card-details">
                   <summary>All dimensions</summary>
                   <div className="rank-card-all">

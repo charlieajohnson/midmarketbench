@@ -28,14 +28,6 @@ export function Hero() {
             height={640}
             priority
           />
-          <div className="hero-ledger-card hero-ledger-card-main">
-            <span>Grounding</span>
-            <strong>88</strong>
-          </div>
-          <div className="hero-ledger-card hero-ledger-card-secondary">
-            <span>Scepticism</span>
-            <strong>83</strong>
-          </div>
         </div>
       </div>
     </section>

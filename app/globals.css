@@ -331,30 +331,45 @@ button {
   position: sticky;
   z-index: 60;
   top: 0;
-  border-bottom: 1px solid var(--hairline);
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  backdrop-filter: blur(18px);
+  border-top: 3px solid color-mix(in srgb, var(--aged-gold) 72%, var(--paper));
+  border-bottom: 1px solid var(--hairline-strong);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(34, 33, 30, 0.04);
 }
 
 .top-nav-inner {
   display: flex;
-  min-height: 68px;
+  min-height: 72px;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 34px;
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
   font-family: var(--font-fraunces), Georgia, serif;
   font-size: 1.36rem;
   font-weight: 520;
   letter-spacing: 0;
 }
 
+.wordmark::after {
+  display: block;
+  width: 46px;
+  height: 1px;
+  background: color-mix(in srgb, var(--aged-gold) 62%, var(--hairline-strong));
+  content: "";
+}
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 24px;
+  border-left: 1px solid var(--hairline);
+  padding-left: 30px;
 }
 
 .nav-link {
@@ -363,8 +378,11 @@ button {
   display: inline-flex;
   align-items: center;
   color: var(--ink-soft);
-  font-size: 0.82rem;
-  font-weight: 690;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 760;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .nav-link:hover,
@@ -375,7 +393,7 @@ button {
 .nav-link[data-active="true"]::after {
   position: absolute;
   right: 0;
-  bottom: 2px;
+  bottom: 0;
   left: 0;
   height: 2px;
   background: var(--verdigris);
@@ -397,32 +415,32 @@ button {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(246, 242, 232, 0.96), rgba(246, 242, 232, 0.78)),
+    linear-gradient(90deg, rgba(246, 242, 232, 0.98), rgba(246, 242, 232, 0.86)),
     url("/graphics/data-field.svg");
   background-size:
     auto,
     320px 320px;
-  opacity: 0.72;
+  opacity: 0.68;
 }
 
 .hero-inner {
   position: relative;
   display: grid;
-  min-height: 600px;
-  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.62fr);
+  min-height: 560px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.54fr);
   align-items: center;
-  gap: 44px;
-  padding: 74px 0 78px;
+  gap: 56px;
+  padding: 68px 0 72px;
 }
 
 .hero-copy {
-  max-width: 760px;
+  max-width: 720px;
 }
 
 .hero h1 {
-  max-width: 760px;
+  max-width: 700px;
   margin: 0;
-  font-size: 7rem;
+  font-size: 6.25rem;
 }
 
 .hero-question {
@@ -442,58 +460,19 @@ button {
 
 .hero-art {
   position: relative;
-  min-height: 460px;
+  max-width: 430px;
+  justify-self: end;
+  min-height: auto;
 }
 
 .hero-art-figure {
   width: 100%;
   height: auto;
-  border: 1px solid var(--hairline-strong);
+  border: 1px solid color-mix(in srgb, var(--hairline-strong) 78%, var(--aged-gold));
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-paper);
+  box-shadow: 0 24px 60px rgba(34, 33, 30, 0.13);
   transform: translateY(0);
   animation: atelier-drift 8s var(--ease-out) infinite alternate;
-}
-
-.hero-ledger-card {
-  position: absolute;
-  display: grid;
-  min-width: 146px;
-  gap: 2px;
-  border: 1px solid var(--hairline-strong);
-  border-radius: var(--radius-card);
-  background: var(--surface-solid);
-  padding: 14px 16px;
-  box-shadow: 0 18px 40px rgba(34, 33, 30, 0.12);
-}
-
-.hero-ledger-card span {
-  color: var(--muted);
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.68rem;
-  font-weight: 720;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.hero-ledger-card strong {
-  color: var(--ink);
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-size: 2.2rem;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.hero-ledger-card-main {
-  right: 28px;
-  bottom: 62px;
-  animation: card-rise var(--motion-slow) var(--ease-out) 140ms both;
-}
-
-.hero-ledger-card-secondary {
-  bottom: 18px;
-  left: 18px;
-  animation: card-rise var(--motion-slow) var(--ease-out) 260ms both;
 }
 
 .synthetic-banner {
@@ -1270,8 +1249,8 @@ button {
   }
 
   .hero h1 {
-    max-width: 760px;
-    font-size: 5.6rem;
+    max-width: 700px;
+    font-size: 5.05rem;
   }
 
   .hero-inner {
@@ -1280,7 +1259,8 @@ button {
   }
 
   .hero-art {
-    max-width: 560px;
+    max-width: 520px;
+    justify-self: start;
     min-height: auto;
   }
 
@@ -1342,6 +1322,11 @@ button {
 
   .top-nav-inner {
     min-height: 60px;
+    gap: 18px;
+  }
+
+  .wordmark::after {
+    width: 28px;
   }
 
   .nav-links {
@@ -1396,7 +1381,7 @@ button {
   }
 
   .hero h1 {
-    font-size: 3.7rem;
+    font-size: 3.35rem;
   }
 
   .hero-question {
@@ -1404,20 +1389,11 @@ button {
   }
 
   .hero-art {
-    max-width: 470px;
+    max-width: 430px;
   }
 
   .hero-art-figure {
     max-height: 300px;
-  }
-
-  .hero-ledger-card {
-    min-width: 120px;
-    padding: 11px 12px;
-  }
-
-  .hero-ledger-card strong {
-    font-size: 1.7rem;
   }
 
   .section-head {
@@ -1510,6 +1486,12 @@ button {
     margin-top: 18px;
   }
 
+  .rank-card-meta {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
   .rank-card-bar {
     display: grid;
     grid-template-columns: 118px minmax(0, 1fr) 34px;
@@ -1559,7 +1541,7 @@ button {
 
 @media (max-width: 430px) {
   .hero h1 {
-    font-size: 3.05rem;
+    font-size: 2.86rem;
   }
 
   .page-title {

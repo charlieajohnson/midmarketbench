@@ -1,33 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" role="img" aria-labelledby="title desc">
-  <title id="title">Humanist compute atelier fragment</title>
-  <desc id="desc">A stylised evaluator, ledger and dotted computation field for MidMarketBench.</desc>
-  <defs>
-    <linearGradient id="tealGround" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2f7f82"/>
-      <stop offset="1" stop-color="#173f35"/>
-    </linearGradient>
-    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fffaf0"/>
-      <stop offset="1" stop-color="#efe7d8"/>
-    </linearGradient>
-    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
-      <circle cx="2.5" cy="2.5" r="1.4" fill="#d8ece8" opacity=".68"/>
-    </pattern>
-  </defs>
-  <rect width="760" height="640" rx="32" fill="url(#tealGround)"/>
-  <rect x="26" y="28" width="708" height="584" rx="24" fill="url(#dots)" opacity=".55"/>
-  <path d="M86 502c94-50 145-136 145-255 0-73 44-128 113-128 76 0 124 66 118 156-7 108 41 181 151 220v90H86z" fill="#a94d43" opacity=".86"/>
-  <path d="M251 585V351c0-66 40-119 93-119s94 53 94 119v234z" fill="#f6f2e8"/>
-  <path d="M294 238c-17-18-24-39-19-63 8-39 37-64 75-64 43 0 76 34 76 78 0 21-7 38-21 52" fill="#d8cdbd"/>
-  <path d="M304 198c21 18 58 19 91 1" fill="none" stroke="#22211e" stroke-width="8" stroke-linecap="round" opacity=".72"/>
-  <path d="M158 413h294c22 0 40 18 40 40v97H118v-97c0-22 18-40 40-40z" fill="#fffaf0" stroke="#bfb2a0" stroke-width="3"/>
-  <path d="M165 457h278M165 496h211M165 535h252" stroke="#bfb2a0" stroke-width="3" stroke-linecap="round"/>
-  <path d="M508 327h142c22 0 40 18 40 40v126c0 22-18 40-40 40H508z" fill="#22211e" opacity=".94"/>
-  <path d="M532 363h108M532 394h130M532 425h82M532 456h118" stroke="#7fa7a4" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="655" cy="363" r="6" fill="#b89452"/>
-  <circle cx="628" cy="456" r="6" fill="#d8ece8"/>
-  <path d="M478 438c42-4 75-22 101-54" fill="none" stroke="#f6f2e8" stroke-width="18" stroke-linecap="round" opacity=".78"/>
-  <path d="M140 342c42 21 82 30 121 26" fill="none" stroke="#f6f2e8" stroke-width="20" stroke-linecap="round" opacity=".68"/>
-  <path d="M91 78h178M91 108h126M91 138h154" stroke="#e9d8ad" stroke-width="4" stroke-linecap="round" opacity=".88"/>
-  <path d="M590 80l18 44 47 4-36 31 11 46-40-24-40 24 11-46-36-31 47-4z" fill="#b89452" opacity=".72"/>
+  <title id="title">Archival evaluation instrument</title>
+  <desc id="desc">A parchment evaluation sheet, balance scale, model ledger fragment, score slips and judgement seal for MidMarketBench.</desc>
+  <defs/>
+
+  <rect width="760" height="640" fill="#f1e8d7"/>
+  <rect x="18" y="18" width="724" height="604" rx="22" fill="#efe2ce"/>
+  <path d="M36 96c108-32 238-42 381-30 116 10 214 4 307-18v537H36z" fill="#f6f0e4" opacity=".72"/>
+  <path d="M67 62h1M107 62h1M147 62h1M187 62h1M227 62h1M267 62h1M307 62h1M347 62h1M387 62h1M427 62h1M467 62h1M507 62h1M547 62h1M587 62h1M627 62h1M667 62h1M67 102h1M107 102h1M147 102h1M187 102h1M227 102h1M267 102h1M307 102h1M347 102h1M387 102h1M427 102h1M467 102h1M507 102h1M547 102h1M587 102h1M627 102h1M667 102h1M67 542h1M107 542h1M147 542h1M187 542h1M227 542h1M267 542h1M307 542h1M347 542h1M387 542h1M427 542h1M467 542h1M507 542h1M547 542h1M587 542h1M627 542h1M667 542h1" stroke="#7aa7a1" stroke-width="2.2" stroke-linecap="round" opacity=".23"/>
+
+  <g>
+    <path d="M128 84h392c34 0 58 24 54 57l-44 365c-4 29-29 51-58 51H97c-32 0-55-27-50-58l52-365c4-29 29-50 29-50z" fill="#f8f1e4" stroke="#b9aa94" stroke-width="2"/>
+    <path d="M127 84h392c34 0 58 24 54 57l-6 48H91l8-55c4-29 29-50 29-50z" fill="#e7dbc9"/>
+    <rect x="96" y="185" width="440" height="318" fill="#f8f1e4" opacity=".58"/>
+    <path d="M131 134h174M131 158h112M356 134h122M356 158h82" stroke="#6c837f" stroke-width="3" stroke-linecap="round" opacity=".78"/>
+    <path d="M123 232h250M123 271h326M123 310h262M123 349h304M123 388h218M123 427h282" stroke="#695f50" stroke-width="2" stroke-linecap="round" opacity=".34"/>
+    <path d="M111 207h397M111 246h397M111 285h397M111 324h397M111 363h397M111 402h397M111 441h397" stroke="#d1c3ae" stroke-width="1"/>
+  </g>
+
+  <g transform="translate(194 230)">
+    <path d="M132 12v184" stroke="#25231f" stroke-width="7" stroke-linecap="round"/>
+    <path d="M73 56h118" stroke="#25231f" stroke-width="7" stroke-linecap="round"/>
+    <path d="M132 56l-54 96M132 56l54 96" stroke="#6b5d47" stroke-width="3" stroke-linecap="round"/>
+    <path d="M47 152h62c-7 28-19 43-31 43s-24-15-31-43z" fill="#edf3ef" stroke="#5a817c" stroke-width="3"/>
+    <path d="M155 152h62c-7 28-19 43-31 43s-24-15-31-43z" fill="#f7eed9" stroke="#a9873c" stroke-width="3"/>
+    <path d="M91 207h82M63 226h138" stroke="#25231f" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(474 148)">
+    <rect width="190" height="246" rx="14" fill="#5f7f79" opacity=".86" stroke="#9fb5ad" stroke-width="2"/>
+    <rect x="18" y="22" width="154" height="202" rx="8" fill="#d8e0d8" opacity=".12"/>
+    <path d="M34 34h1M54 34h1M74 34h1M94 34h1M114 34h1M134 34h1M154 34h1M34 64h1M54 64h1M74 64h1M94 64h1M114 64h1M134 64h1M154 64h1M34 94h1M54 94h1M74 94h1M94 94h1M114 94h1M134 94h1M154 94h1M34 124h1M54 124h1M74 124h1M94 124h1M114 124h1M134 124h1M154 124h1M34 154h1M54 154h1M74 154h1M94 154h1M114 154h1M134 154h1M154 154h1" stroke="#d8e0d8" stroke-width="3" stroke-linecap="round" opacity=".3"/>
+    <path d="M34 54h72M34 82h118M34 110h94M34 138h126M34 166h82" stroke="#e4decf" stroke-width="4" stroke-linecap="round" opacity=".74"/>
+    <path d="M36 198h55M106 198h30M149 198h10" stroke="#d1a858" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(515 416)">
+    <rect width="164" height="92" rx="10" fill="#f8f1e4" stroke="#b9aa94" stroke-width="2"/>
+    <path d="M18 25h64M18 45h102M18 65h72" stroke="#786f61" stroke-width="2.5" stroke-linecap="round" opacity=".56"/>
+    <path d="M124 19l12 15 19-24" fill="none" stroke="#b28c42" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18 80h18M44 80h18M70 80h18M96 80h18" stroke="#5b726e" stroke-width="3" stroke-linecap="round" opacity=".74"/>
+  </g>
+
+  <g transform="translate(412 449)">
+    <rect width="116" height="76" rx="9" fill="#f8f1e4" stroke="#c5b49b" stroke-width="2"/>
+    <path d="M16 24h58M16 42h28" stroke="#8d3832" stroke-width="3" stroke-linecap="round" opacity=".78"/>
+    <path d="M56 42h26M56 58h32M78 42v16" stroke="#211f1b" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+  </g>
+
+  <g transform="translate(70 452)">
+    <rect width="126" height="86" rx="10" fill="#f8f1e4" stroke="#c5b49b" stroke-width="2"/>
+    <path d="M17 28h76M17 48h32" stroke="#547873" stroke-width="3" stroke-linecap="round" opacity=".78"/>
+    <path d="M60 49h34M60 67h34M60 49v18M94 49v18" stroke="#211f1b" stroke-width="5" stroke-linecap="round" opacity=".84"/>
+  </g>
+
+  <g transform="translate(572 74)">
+    <circle cx="50" cy="50" r="42" fill="#b89245" opacity=".88"/>
+    <circle cx="50" cy="50" r="31" fill="none" stroke="#f4e2aa" stroke-width="2" opacity=".72"/>
+    <path d="M30 51l15 15 29-34" fill="none" stroke="#f8f1e4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 103l30-14 30 14v47l-30-13-30 13z" fill="#b89245" opacity=".48"/>
+  </g>
+
+  <path d="M59 74h120M59 96h82M59 118h140" stroke="#a7863c" stroke-width="3" stroke-linecap="round" opacity=".42"/>
+  <path d="M638 543c-30 16-67 25-109 27-41 2-89-4-143-19" fill="none" stroke="#8d3832" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 11" opacity=".42"/>
 </svg>

@@ -420,9 +420,9 @@ button {
 }
 
 .hero h1 {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0;
-  font-size: 7.2rem;
+  font-size: 7rem;
 }
 
 .hero-question {
@@ -1270,11 +1270,18 @@ button {
   }
 
   .hero h1 {
-    font-size: 5.85rem;
+    max-width: 760px;
+    font-size: 5.6rem;
   }
 
   .hero-inner {
-    grid-template-columns: minmax(0, 1fr) minmax(310px, 0.68fr);
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-art {
+    max-width: 560px;
+    min-height: auto;
   }
 
   .dimension-grid {

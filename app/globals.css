@@ -427,7 +427,7 @@ button {
   position: relative;
   display: grid;
   min-height: 560px;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.54fr);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 430px);
   align-items: center;
   gap: 56px;
   padding: 68px 0 72px;

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">Evaluation scale</title>
+  <desc id="desc">A verdigris scoring scale with benchmark dimension labels.</desc>
+  <defs>
+    <pattern id="field" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#7fa7a4" opacity=".45"/>
+    </pattern>
+  </defs>
+  <rect width="720" height="420" rx="18" fill="#fffaf0"/>
+  <rect x="24" y="24" width="672" height="372" rx="12" fill="url(#field)"/>
+  <path d="M360 83v226" stroke="#22211e" stroke-width="8" stroke-linecap="round"/>
+  <path d="M228 128h264" stroke="#22211e" stroke-width="8" stroke-linecap="round"/>
+  <path d="M228 128l-76 120h152zM492 128l-76 120h152z" fill="#d8ece8" stroke="#2f7f82" stroke-width="5"/>
+  <path d="M152 248c28 32 120 32 152 0M416 248c30 27 118 27 152 0" fill="none" stroke="#b89452" stroke-width="5" stroke-linecap="round"/>
+  <path d="M300 335h120M254 365h212" stroke="#22211e" stroke-width="8" stroke-linecap="round"/>
+  <text x="100" y="72" fill="#1f5e61" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">Grounding</text>
+  <text x="444" y="72" fill="#1f5e61" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700">Judgement</text>
+  <text x="91" y="332" fill="#a94d43" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700">Scepticism</text>
+  <text x="521" y="332" fill="#a94d43" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700">Risk</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MidMarketBench mark">
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="#f6f2e8"/>
+  <rect x="18" y="12" width="16" height="40" rx="4" fill="#2f7f82"/>
+  <path d="M39 20h12M39 31h10M39 42h12" stroke="#b89452" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="26" cy="43" r="3.5" fill="#22211e"/>
+</svg>

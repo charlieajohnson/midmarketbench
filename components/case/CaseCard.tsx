@@ -7,11 +7,11 @@ export function CaseCard({ benchmarkCase }: { benchmarkCase: BenchmarkCase }) {
   return (
     <Link className="card card-pad case-card" href={`/cases/${benchmarkCase.slug}`}>
       <div>
-        <div style={{ display: "flex", justifyContent: "space-between", gap: 16 }}>
+        <div className="case-card-kicker">
           <Badge>Live case</Badge>
           <Badge>{benchmarkCase.difficulty}</Badge>
         </div>
-        <h3 style={{ marginTop: 24 }}>{benchmarkCase.name}</h3>
+        <h3>{benchmarkCase.name}</h3>
         <p>
           {benchmarkCase.subsector}. {benchmarkCase.summary}
         </p>
@@ -41,7 +41,7 @@ export function StubCaseCard({
     <article className="card card-pad case-card" data-disabled="true">
       <div>
         <Badge>{status}</Badge>
-        <h3 style={{ marginTop: 24 }}>{name}</h3>
+        <h3>{name}</h3>
         <p>{subsector}. Designed around sector-specific failure modes and European fragmentation.</p>
       </div>
       <div className="case-stats">

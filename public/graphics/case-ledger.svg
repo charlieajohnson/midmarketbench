@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420" role="img" aria-labelledby="title desc">
+  <title id="title">Synthetic diligence packets</title>
+  <desc id="desc">Layered paper case packets with ledger lines and data marks.</desc>
+  <rect width="620" height="420" rx="18" fill="#eff4ef"/>
+  <path d="M86 72h300l64 62v246H86z" fill="#fffaf0" stroke="#bfb2a0" stroke-width="3"/>
+  <path d="M386 72v62h64" fill="#efe7d8" stroke="#bfb2a0" stroke-width="3"/>
+  <path d="M120 141h178M120 178h246M120 215h210M120 252h258M120 289h186" stroke="#bfb2a0" stroke-width="4" stroke-linecap="round"/>
+  <path d="M415 146h106v178H415z" fill="#2f7f82" opacity=".92"/>
+  <path d="M439 179h55M439 208h40M439 237h70M439 266h48" stroke="#d8ece8" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="502" cy="208" r="7" fill="#b89452"/>
+  <path d="M152 348c66-24 142-24 226 0" fill="none" stroke="#a94d43" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+  <path d="M64 99v281" stroke="#7fa7a4" stroke-width="12" stroke-linecap="round"/>
+  <path d="M530 70l15 34 36 4-28 23 9 36-32-19-32 19 9-36-28-23 36-4z" fill="#b89452" opacity=".76"/>
+</svg>

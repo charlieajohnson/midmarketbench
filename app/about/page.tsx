@@ -13,24 +13,23 @@ export default function AboutPage() {
     <div className="shell page">
       <PageHeader
         eyebrow="About"
-        title="A benchmark for work that ends in a decision."
-        lede="Generic benchmarks do not reveal whether a model can survive a sparse, contradictory and commercially sensitive investment workflow. MidMarketBench is designed around that gap."
+        title="A careful instrument for machine-era judgement."
+        lede="MidMarketBench evaluates whether frontier models can produce useful investment workflow outputs from synthetic private-market cases."
       />
       <section className="section">
         <SyntheticBanner dismissible={false} />
       </section>
       <section className="section grid-2">
         <article>
-          <p className="eyebrow">What it is</p>
-          <h2 className="section-title">A public authority layer.</h2>
+          <p className="eyebrow">What it measures</p>
+          <h2 className="section-title">Grounded commercial judgement.</h2>
           <p className="lede">
-            Synthetic cases, standard prompts, anchored rubrics, representative outputs and a leaderboard shaped by
-            investment relevance.
+            Synthetic cases, standard prompts, anchored rubrics, representative outputs and a leaderboard shaped by investment relevance.
           </p>
         </article>
         <article>
-          <p className="eyebrow">What it is not</p>
-          <h2 className="section-title">Not investment advice.</h2>
+          <p className="eyebrow">What it does not measure</p>
+          <h2 className="section-title">Not market truth.</h2>
           <p className="lede">
             No company is real. No score is an observed model result in this pass. The shell demonstrates the evaluation
             contract before live runs begin.

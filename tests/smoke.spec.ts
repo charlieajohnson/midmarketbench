@@ -10,12 +10,14 @@ test("renders the synthetic leaderboard and model detail", async ({ page }) => {
   await expect(page.getByLabel("GPT-5.5 dimension radar")).toBeVisible();
 });
 
-test("persists the theme and passes a serious accessibility scan", async ({ page }) => {
+test("mobile navigation works and the page passes a serious accessibility scan", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await page.getByRole("button", { name: "Switch to dark theme" }).click();
-  await expect(page.locator("html")).toHaveClass(/dark/);
-  await page.reload();
-  await expect(page.locator("html")).toHaveClass(/dark/);
+  await page.getByRole("button", { name: "Open navigation menu" }).click();
+  await expect(page.getByLabel("Mobile navigation").getByRole("link", { name: "Cases" })).toBeVisible();
+  await page.getByLabel("Mobile navigation").getByRole("link", { name: "Cases" }).click();
+  await expect(page).toHaveURL(/\/cases$/);
+  await expect(page.getByRole("heading", { name: "Realistic enough to require judgement." })).toBeVisible();
   const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
   expect(results.violations).toEqual([]);
 });

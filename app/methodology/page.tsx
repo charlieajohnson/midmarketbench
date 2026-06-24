@@ -26,8 +26,8 @@ export default async function MethodologyPage() {
     <div className="shell page">
       <PageHeader
         eyebrow="Methodology v0.3"
-        title="Can the model improve the decision?"
-        lede="MidMarketBench tests applied investment judgement against realistic synthetic diligence packets. The board is finance-weighted by design and should not track a general-intelligence leaderboard."
+        title="Judgement carries the most weight."
+        lede="MidMarketBench tests applied investment judgement against realistic synthetic diligence packets. Overall is derived from eight dimension scores, never stored directly."
       />
       <section className="section">
         <h2 className="section-title">Dimensions and weights</h2>

@@ -15,8 +15,8 @@ export default async function ModelsPage() {
     <div className="shell page">
       <PageHeader
         eyebrow="Model index"
-        title="Frontier systems, one investment lens."
-        lede="Model names and provider identities are current to the stated date. Every score and rank on this pass is synthetic and illustrative."
+        title="Model behaviour through one investment lens."
+        lede="The board compares model behaviour against investment workflow tasks, not general preference. Every score and rank on this pass is synthetic and illustrative."
       />
       <section className="section">
         <div className="table-wrap">

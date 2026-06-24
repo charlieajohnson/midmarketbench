@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" role="img" aria-labelledby="title desc">
+  <title id="title">Humanist compute atelier fragment</title>
+  <desc id="desc">A stylised evaluator, ledger and dotted computation field for MidMarketBench.</desc>
+  <defs>
+    <linearGradient id="tealGround" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f7f82"/>
+      <stop offset="1" stop-color="#173f35"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="1" stop-color="#efe7d8"/>
+    </linearGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2.5" cy="2.5" r="1.4" fill="#d8ece8" opacity=".68"/>
+    </pattern>
+  </defs>
+  <rect width="760" height="640" rx="32" fill="url(#tealGround)"/>
+  <rect x="26" y="28" width="708" height="584" rx="24" fill="url(#dots)" opacity=".55"/>
+  <path d="M86 502c94-50 145-136 145-255 0-73 44-128 113-128 76 0 124 66 118 156-7 108 41 181 151 220v90H86z" fill="#a94d43" opacity=".86"/>
+  <path d="M251 585V351c0-66 40-119 93-119s94 53 94 119v234z" fill="#f6f2e8"/>
+  <path d="M294 238c-17-18-24-39-19-63 8-39 37-64 75-64 43 0 76 34 76 78 0 21-7 38-21 52" fill="#d8cdbd"/>
+  <path d="M304 198c21 18 58 19 91 1" fill="none" stroke="#22211e" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+  <path d="M158 413h294c22 0 40 18 40 40v97H118v-97c0-22 18-40 40-40z" fill="#fffaf0" stroke="#bfb2a0" stroke-width="3"/>
+  <path d="M165 457h278M165 496h211M165 535h252" stroke="#bfb2a0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M508 327h142c22 0 40 18 40 40v126c0 22-18 40-40 40H508z" fill="#22211e" opacity=".94"/>
+  <path d="M532 363h108M532 394h130M532 425h82M532 456h118" stroke="#7fa7a4" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="655" cy="363" r="6" fill="#b89452"/>
+  <circle cx="628" cy="456" r="6" fill="#d8ece8"/>
+  <path d="M478 438c42-4 75-22 101-54" fill="none" stroke="#f6f2e8" stroke-width="18" stroke-linecap="round" opacity=".78"/>
+  <path d="M140 342c42 21 82 30 121 26" fill="none" stroke="#f6f2e8" stroke-width="20" stroke-linecap="round" opacity=".68"/>
+  <path d="M91 78h178M91 108h126M91 138h154" stroke="#e9d8ad" stroke-width="4" stroke-linecap="round" opacity=".88"/>
+  <path d="M590 80l18 44 47 4-36 31 11 46-40-24-40 24 11-46-36-31 47-4z" fill="#b89452" opacity=".72"/>
+</svg>

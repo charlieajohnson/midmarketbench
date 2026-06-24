@@ -8,6 +8,7 @@ export function SyntheticBanner({ dismissible = true }: { dismissible?: boolean 
   if (!visible) return null;
   return (
     <aside className="synthetic-banner" aria-label="Synthetic data notice">
+      <span className="synthetic-banner-label">Archival note</span>
       <span>{benchmark.disclaimer}</span>
       {dismissible && (
         <button

@@ -28,7 +28,7 @@ export function Footer() {
       </div>
       <div className="rule">
         <div className="shell footer-bottom">
-          Methodology {benchmark.methodologyVersion} · Updated 21 June 2026 · Closed-book mode
+          Methodology {benchmark.methodologyVersion} / Updated 21 June 2026 / Closed-book mode
         </div>
       </div>
     </footer>

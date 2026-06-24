@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Hero() {
@@ -19,7 +20,14 @@ export function Hero() {
           </div>
         </div>
         <div className="hero-art" aria-hidden="true">
-          <img className="hero-art-figure" src="/graphics/atelier-hero.svg" alt="" />
+          <Image
+            className="hero-art-figure"
+            src="/graphics/atelier-hero.svg"
+            alt=""
+            width={760}
+            height={640}
+            priority
+          />
           <div className="hero-ledger-card hero-ledger-card-main">
             <span>Grounding</span>
             <strong>88</strong>

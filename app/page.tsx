@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/common/Hero";
 import { SyntheticBanner } from "@/components/common/SyntheticBanner";
@@ -36,7 +37,14 @@ export default async function HomePage() {
               eight dimension scores, never stored directly.
             </p>
           </div>
-          <img className="section-graphic" src="/graphics/evaluation-scale.svg" alt="" aria-hidden="true" />
+          <Image
+            className="section-graphic"
+            src="/graphics/evaluation-scale.svg"
+            alt=""
+            aria-hidden="true"
+            width={720}
+            height={420}
+          />
           <DimensionLegend dimensions={dimensions} />
         </section>
         <section className="section doctrine-card">
@@ -53,7 +61,7 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-          <img src="/graphics/case-ledger.svg" alt="" aria-hidden="true" />
+          <Image src="/graphics/case-ledger.svg" alt="" aria-hidden="true" width={620} height={420} />
         </section>
       </div>
     </>

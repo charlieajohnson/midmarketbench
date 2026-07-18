@@ -1,0 +1,62 @@
+{
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "methodology_version": "v0.4-mini",
+  "evaluated_at": "2026-07-18",
+  "mode": "Closed-book",
+  "samples_per_model": 2,
+  "local_budget_usd": 7,
+  "concurrency": 3,
+  "candidate_max_tokens": 6144,
+  "kimi_max_tokens": 32768,
+  "glm_max_tokens": 12288,
+  "opus_max_tokens": 12288,
+  "deepseek_max_tokens": 12288,
+  "judge_max_tokens": 4096,
+  "claude_judge_max_tokens": 12288,
+  "candidate_schema_variants": [
+    {
+      "id": "provider-compatible",
+      "response_format_sha256": "37a752faef01553f5eba6843de01a57147c6c3b319bbdde74000ce93f54735ab"
+    },
+    {
+      "id": "bounded-json-schema",
+      "response_format_sha256": "98c98d3668879ec785146329bf1bfd19fa49dc2c2fe918b8efe1018a04ff37b8"
+    }
+  ],
+  "models": [
+    {
+      "id": "anthropic/claude-fable-5",
+      "slug": "claude-fable-5",
+      "name": "Claude Fable 5",
+      "provider_id": "anthropic"
+    },
+    { "id": "openai/gpt-5.6-sol", "slug": "gpt-5-6-sol", "name": "GPT-5.6 Sol", "provider_id": "openai" },
+    { "id": "moonshotai/kimi-k3", "slug": "kimi-k3", "name": "Kimi K3", "provider_id": "moonshot" },
+    {
+      "id": "anthropic/claude-opus-4.8",
+      "slug": "claude-opus-4-8",
+      "name": "Claude Opus 4.8",
+      "provider_id": "anthropic"
+    },
+    { "id": "x-ai/grok-4.5", "slug": "grok-4-5", "name": "Grok 4.5", "provider_id": "xai" },
+    {
+      "id": "google/gemini-3.5-flash",
+      "slug": "gemini-3-5-flash",
+      "name": "Gemini 3.5 Flash",
+      "provider_id": "google"
+    },
+    { "id": "z-ai/glm-5.2", "slug": "glm-5-2", "name": "GLM 5.2", "provider_id": "zai" },
+    { "id": "qwen/qwen3.7-max", "slug": "qwen3-7-max", "name": "Qwen3.7 Max", "provider_id": "alibaba" },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "slug": "deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro",
+      "provider_id": "deepseek"
+    }
+  ],
+  "judges": [
+    { "id": "openai/gpt-5.6-terra", "slug": "gpt-5-6-terra-judge", "provider_id": "openai" },
+    { "id": "anthropic/claude-sonnet-5", "slug": "claude-sonnet-5-judge", "provider_id": "anthropic" },
+    { "id": "google/gemini-3.1-pro-preview", "slug": "gemini-3-1-pro-judge", "provider_id": "google" }
+  ]
+}

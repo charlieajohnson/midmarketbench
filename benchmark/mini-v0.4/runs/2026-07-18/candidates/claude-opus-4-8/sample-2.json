@@ -1,0 +1,129 @@
+{
+  "kind": "candidate-2",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:41:52.900Z",
+  "completed_at": "2026-07-18T20:41:53.852Z",
+  "requested_model": "anthropic/claude-opus-4.8",
+  "returned_model": null,
+  "provider": null,
+  "router_metadata": {
+    "requested": "anthropic/claude-opus-4.8",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=4, attempts=4",
+    "attempt": 4,
+    "is_byok": false,
+    "endpoints": {
+      "total": 7,
+      "available": [
+        {
+          "provider": "Azure",
+          "model": "anthropic/claude-4.8-opus-20260528",
+          "selected": false
+        },
+        {
+          "provider": "Anthropic",
+          "model": "anthropic/claude-4.8-opus-20260528",
+          "selected": false
+        },
+        {
+          "provider": "Anthropic",
+          "model": "anthropic/claude-4.8-opus-20260528",
+          "selected": false
+        },
+        {
+          "provider": "Amazon Bedrock",
+          "model": "anthropic/claude-4.8-opus-20260528",
+          "selected": false
+        }
+      ]
+    },
+    "attempts": [
+      {
+        "provider": "Azure",
+        "model": "anthropic/claude-4.8-opus-20260528",
+        "status": 400
+      },
+      {
+        "provider": "Anthropic",
+        "model": "anthropic/claude-4.8-opus-20260528",
+        "status": 400
+      },
+      {
+        "provider": "Anthropic",
+        "model": "anthropic/claude-4.8-opus-20260528",
+        "status": 400
+      },
+      {
+        "provider": "Amazon Bedrock",
+        "model": "anthropic/claude-4.8-opus-20260528",
+        "status": 400
+      }
+    ]
+  },
+  "generation_id": null,
+  "finish_reason": null,
+  "native_finish_reason": null,
+  "latency_ms": 952,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0,
+  "cost_basis": "not_charged",
+  "usage": null,
+  "generation": null,
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "azure/us-east-2",
+    "provider_name": "Azure",
+    "quantization": "unknown",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 5,
+    "maximum_completion_usd_per_million": 25
+  },
+  "request_sha256": "c9ff4d92c880556be271041304de75888ce07e5c67525e92f57e17196f0c3194",
+  "error": {
+    "message": "Provider returned error",
+    "status": 400,
+    "body": {
+      "message": "Provider returned error",
+      "code": 400,
+      "metadata": {
+        "raw": "{\"message\":\"output_config.format: Extra inputs are not permitted\"}",
+        "provider_name": "Amazon Bedrock",
+        "is_byok": false,
+        "previous_errors": [
+          {
+            "code": 400,
+            "message": "Provider returned error",
+            "provider_name": "Azure",
+            "raw": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"output_config.format.schema: For 'array' type, property 'maxItems' is not supported\"},\"request_id\":\"req_011CdAAv9snRBU4KoJdfojjZ\"}"
+          },
+          {
+            "code": 400,
+            "message": "Provider returned error",
+            "provider_name": "Anthropic",
+            "raw": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"output_config.format.schema: For 'array' type, property 'maxItems' is not supported\"},\"request_id\":\"req_011CdAAvAR2pxnprUP3rZ4aW\"}"
+          },
+          {
+            "code": 400,
+            "message": "Provider returned error",
+            "provider_name": "Anthropic",
+            "raw": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"output_config.format.schema: For 'array' type, property 'maxItems' is not supported\"},\"request_id\":\"req_011CdAAvB8h2WPAKCD161Pky\"}"
+          }
+        ]
+      }
+    }
+  },
+  "model_config": {
+    "id": "anthropic/claude-opus-4.8",
+    "slug": "claude-opus-4-8",
+    "name": "Claude Opus 4.8",
+    "provider_id": "anthropic"
+  }
+}

@@ -34,8 +34,8 @@ export function Hero() {
             <Link className="button-link button-link-primary" href="/#leaderboard">
               View leaderboard
             </Link>
-            <Link className="button-link" href="/cases/compliance-workflow-saas">
-              Read the case
+            <Link className="button-link" href="/cases/norwyn-controls">
+              Inspect scored case
             </Link>
           </div>
         </div>

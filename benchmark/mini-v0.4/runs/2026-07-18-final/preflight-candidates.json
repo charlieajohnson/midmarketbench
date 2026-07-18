@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-07-18T21:25:57.815Z",
+  "input_token_estimator": "UTF-8 JSON characters divided by three",
+  "candidate_maximum_usd": 0.995741,
+  "judge_maximum_usd": 0,
+  "all_in_maximum_usd": 0.995741,
+  "local_budget_usd": 7,
+  "recorded_spend_usd": 2.224449,
+  "candidate_calls": 2,
+  "judge_calls": 0,
+  "within_budget": true
+}

@@ -9,11 +9,12 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:benchmark": "node --test scripts/benchmark/evaluate.test.mjs",
     "test:e2e": "playwright test",
     "check:copy": "node scripts/check-copy.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run check:copy && npm run lint && npm run typecheck && npm test && npm run build"
+    "check": "npm run check:copy && npm run lint && npm run typecheck && npm test && npm run test:benchmark && npm run build"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",

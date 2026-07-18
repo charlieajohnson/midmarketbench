@@ -1,9 +1,11 @@
 import type {
   AnswerKeyItem,
+  BenchmarkRunSummary,
   BenchmarkCase,
   Dimension,
   LeaderboardRow,
   Model,
+  ModelBenchmarkResult,
   Provider,
   SampleOutput,
   Task,
@@ -15,6 +17,10 @@ export interface BenchmarkRepository {
   getProviders(): Promise<Provider[]>;
   getDimensions(): Promise<Dimension[]>;
   getLeaderboard(versionLabel?: string): Promise<LeaderboardRow[]>;
+  getRunSummary(): Promise<BenchmarkRunSummary>;
+  getModelResults(): Promise<ModelBenchmarkResult[]>;
+  getModelResult(slug: string): Promise<ModelBenchmarkResult | undefined>;
+  getUnavailableModels(): Promise<ModelBenchmarkResult[]>;
   getCases(): Promise<BenchmarkCase[]>;
   getCase(slug: string): Promise<BenchmarkCase | undefined>;
   getTasks(): Promise<Task[]>;

@@ -15,5 +15,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...cases.map((item) => `/cases/${item.slug}`),
     ...tasks.map((item) => `/tasks/${item.key}`),
   ];
-  return paths.map((path) => ({ url: `${siteUrl}${path}`, lastModified: new Date("2026-06-21") }));
+  return paths.map((path) => ({ url: `${siteUrl}${path}`, lastModified: new Date("2026-07-18") }));
 }

@@ -1,0 +1,133 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:34:48.331Z",
+  "completed_at": "2026-07-18T20:37:48.286Z",
+  "requested_model": "deepseek/deepseek-v4-pro",
+  "returned_model": null,
+  "provider": null,
+  "router_metadata": {
+    "requested": "deepseek/deepseek-v4-pro",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=17",
+    "attempt": 0,
+    "is_byok": false,
+    "endpoints": {
+      "total": 17,
+      "available": [
+        {
+          "provider": "DeepSeek",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "StreamLake",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "Baidu",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "GMICloud",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "Ionstream",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "Novita",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "DeepInfra",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "DigitalOcean",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "Alibaba",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "SiliconFlow",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "Venice",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "AtlasCloud",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "BaseTen",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "Parasail",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "WandB",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "Together",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        },
+        {
+          "provider": "Fireworks",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": false
+        }
+      ]
+    }
+  },
+  "generation_id": null,
+  "finish_reason": null,
+  "native_finish_reason": null,
+  "latency_ms": 179954,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0,
+  "cost_basis": "not_charged",
+  "usage": null,
+  "generation": null,
+  "transport_retries": [],
+  "request_sha256": "6944a8e252a65c24ae2a4474b03aa52ff53d2eacec8d2adadcfc1e41a807dde4",
+  "error": {
+    "message": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection",
+    "status": 404,
+    "body": {
+      "message": "No endpoints found that can handle the requested parameters. To learn more about provider routing, visit: https://openrouter.ai/docs/guides/routing/provider-selection",
+      "code": 404
+    }
+  },
+  "model_config": {
+    "id": "deepseek/deepseek-v4-pro",
+    "slug": "deepseek-v4-pro",
+    "name": "DeepSeek V4 Pro",
+    "provider_id": "deepseek"
+  }
+}

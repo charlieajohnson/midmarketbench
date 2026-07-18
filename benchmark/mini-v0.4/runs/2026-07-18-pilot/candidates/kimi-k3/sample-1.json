@@ -1,0 +1,29 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:10:44.644Z",
+  "completed_at": "2026-07-18T20:13:44.650Z",
+  "requested_model": "moonshotai/kimi-k3",
+  "returned_model": null,
+  "provider": null,
+  "generation_id": null,
+  "finish_reason": null,
+  "latency_ms": 180006,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0,
+  "cost_basis": "not_charged",
+  "usage": null,
+  "generation": null,
+  "request_sha256": "69353b83e57d53b9760d0b2324c55d5a98aa5b4906e49ff694e60a57a488f021",
+  "error": {
+    "message": "Completion did not contain JSON text.",
+    "status": null
+  },
+  "model_config": {
+    "id": "moonshotai/kimi-k3",
+    "slug": "kimi-k3",
+    "name": "Kimi K3",
+    "provider_id": "moonshot"
+  }
+}

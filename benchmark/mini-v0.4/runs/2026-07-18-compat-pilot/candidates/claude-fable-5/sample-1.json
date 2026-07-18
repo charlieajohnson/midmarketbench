@@ -1,0 +1,83 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:25:25.034Z",
+  "completed_at": "2026-07-18T20:25:25.735Z",
+  "requested_model": "anthropic/claude-fable-5",
+  "returned_model": null,
+  "provider": null,
+  "router_metadata": {
+    "requested": "anthropic/claude-fable-5",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=2, attempts=2",
+    "attempt": 2,
+    "is_byok": false,
+    "endpoints": {
+      "total": 6,
+      "available": [
+        {
+          "provider": "Anthropic",
+          "model": "anthropic/claude-5-fable-20260609",
+          "selected": false
+        },
+        {
+          "provider": "Amazon Bedrock",
+          "model": "anthropic/claude-5-fable-20260609",
+          "selected": false
+        }
+      ]
+    },
+    "attempts": [
+      {
+        "provider": "Anthropic",
+        "model": "anthropic/claude-5-fable-20260609",
+        "status": 400
+      },
+      {
+        "provider": "Amazon Bedrock",
+        "model": "anthropic/claude-5-fable-20260609",
+        "status": 400
+      }
+    ]
+  },
+  "generation_id": null,
+  "finish_reason": null,
+  "native_finish_reason": null,
+  "latency_ms": 700,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0,
+  "cost_basis": "not_charged",
+  "usage": null,
+  "generation": null,
+  "transport_retries": [],
+  "request_sha256": "88ada163f506b422a065ab4facb1e58993dbf8c5ead4961cd0b9498c547dbd93",
+  "error": {
+    "message": "Provider returned error",
+    "status": 400,
+    "body": {
+      "message": "Provider returned error",
+      "code": 400,
+      "metadata": {
+        "raw": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"output_config.format.schema: For 'array' type, 'minItems' values other than 0 or 1 are not supported (got: [6, ∞])\"},\"request_id\":\"req_011CdA9fLro87A6u1avnSuuU\"}",
+        "provider_name": "Amazon Bedrock",
+        "is_byok": false,
+        "previous_errors": [
+          {
+            "code": 400,
+            "message": "Provider returned error",
+            "provider_name": "Anthropic",
+            "raw": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"output_config.format.schema: For 'array' type, 'minItems' values other than 0 or 1 are not supported (got: [6, ∞])\"},\"request_id\":\"req_011CdA9fLCrgCkboDbaA4fHi\"}"
+          }
+        ]
+      }
+    }
+  },
+  "model_config": {
+    "id": "anthropic/claude-fable-5",
+    "slug": "claude-fable-5",
+    "name": "Claude Fable 5",
+    "provider_id": "anthropic"
+  }
+}

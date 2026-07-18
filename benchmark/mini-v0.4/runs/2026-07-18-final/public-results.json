@@ -1,0 +1,628 @@
+{
+  "benchmark": {
+    "id": "midmarketbench-mini-v0.4",
+    "methodology_version": "v0.4-mini",
+    "evaluated_at": "2026-07-18",
+    "mode": "Closed-book",
+    "case_id": "norwyn-controls-2026-07",
+    "case_name": "Norwyn Controls",
+    "case_confidentiality": "Synthetic holdout created for this run",
+    "run_id": "2026-07-18-final",
+    "tasks": 4,
+    "samples_per_model": 2,
+    "models_requested": 9,
+    "models_completed": 8,
+    "models_partial": 0,
+    "models_incomplete": 0,
+    "models_unavailable": 1,
+    "total_spend_usd": 5.31559,
+    "conservatively_accounted_spend_usd": 7.373867,
+    "provider_reported_spend_usd": 5.020023,
+    "spend_basis": "Total spend is the final settled usage for the dedicated OpenRouter key. Conservative accounting reserves request maxima for ambiguous dispatches; provider-reported spend includes generations with usage records across all benchmark attempts.",
+    "local_budget_usd": 7,
+    "prompt_sha256": "8003e8ff4f2ec5f89ab6ac54706f9d3c45deebbf1c893d22cfa3e2e201b95dbe",
+    "judge_system_prompt_sha256": "dc6102c543f47a5f066336a805fa1ed03e0304fda23d0ad6ab96b83b530040c6",
+    "candidate_schema_variants": [
+      {
+        "id": "provider-compatible",
+        "response_format_sha256": "37a752faef01553f5eba6843de01a57147c6c3b319bbdde74000ce93f54735ab",
+        "accepted_samples": 6
+      },
+      {
+        "id": "bounded-json-schema",
+        "response_format_sha256": "98c98d3668879ec785146329bf1bfd19fa49dc2c2fe918b8efe1018a04ff37b8",
+        "accepted_samples": 10
+      }
+    ],
+    "case_sha256": "511cc341e41673eb24b1fdd532fd932f934bd65810703dbc6cddb15a83413f1a",
+    "model_snapshot_sha256": "b70c451cd42def5960627679f69d6a21d676a5a9f0f1e95483d0fd6bf4f21bd1",
+    "data_source": "Observed OpenRouter completions",
+    "limitation": "Directional mini benchmark: one fresh synthetic case and two samples per model. It is not a universal ranking of model intelligence."
+  },
+  "methodology": {
+    "weights": {
+      "grounding": 0.15,
+      "commercial_judgement": 0.2,
+      "scepticism": 0.15,
+      "numerical_sanity": 0.15,
+      "risk_discovery": 0.15,
+      "question_generation": 0.1,
+      "european_context": 0.05,
+      "output_usefulness": 0.05
+    },
+    "scoring": "Reference-scored metrics, issue coverage, ranking and constrained action selection; blinded cross-family judges score only the IC note, with grades normalised between weak and strong anchors.",
+    "reasoning_policy": "A 2,048-token reasoning budget for candidates and 1,024 for judges; Kimi K3 uses its mandatory max level.",
+    "tie_rule": "Differences below two points are marked as provisional ties."
+  },
+  "models": [
+    {
+      "model": {
+        "id": "moonshotai/kimi-k3",
+        "slug": "kimi-k3",
+        "name": "Kimi K3",
+        "provider_id": "moonshot"
+      },
+      "status": "complete",
+      "samples_completed": 2,
+      "candidate_samples_completed": 2,
+      "incomplete_samples": [],
+      "dimensions": {
+        "grounding": 85.41,
+        "commercial_judgement": 98.66,
+        "scepticism": 97.68,
+        "numerical_sanity": 100,
+        "risk_discovery": 96.56,
+        "question_generation": 96.06,
+        "european_context": 100,
+        "output_usefulness": 99.73
+      },
+      "overall": 96.28,
+      "range": [
+        95.64,
+        96.91
+      ],
+      "sample_scores": [
+        95.64,
+        96.91
+      ],
+      "provider_reported_candidate_cost_usd": 0.612526,
+      "provider_reported_judge_cost_usd": 0.281641,
+      "median_latency_ms": 386867,
+      "finish_reasons": [
+        "stop"
+      ],
+      "openrouter": {
+        "requested_id": "moonshotai/kimi-k3",
+        "returned_models": [
+          "moonshotai/kimi-k3"
+        ],
+        "providers": [
+          "Moonshot AI"
+        ],
+        "endpoint_tags": [
+          "moonshotai/int4"
+        ],
+        "quantizations": [
+          "int4"
+        ],
+        "context_length": 1048576,
+        "pricing": {
+          "basis": "selected_endpoint_snapshot",
+          "endpoints": [
+            {
+              "tag": "moonshotai/int4",
+              "provider": "Moonshot AI",
+              "prompt_usd_per_million": 3,
+              "completion_usd_per_million": 15
+            }
+          ]
+        }
+      },
+      "caveat": "Kimi K3 via Moonshot AI, INT4, OpenRouter. Mandatory max reasoning; full weights were not yet released on 18 July 2026.",
+      "rank": 1,
+      "provisional_tie": true
+    },
+    {
+      "model": {
+        "id": "x-ai/grok-4.5",
+        "slug": "grok-4-5",
+        "name": "Grok 4.5",
+        "provider_id": "xai"
+      },
+      "status": "complete",
+      "samples_completed": 2,
+      "candidate_samples_completed": 2,
+      "incomplete_samples": [],
+      "dimensions": {
+        "grounding": 89.39,
+        "commercial_judgement": 99.12,
+        "scepticism": 100,
+        "numerical_sanity": 100,
+        "risk_discovery": 99.6,
+        "question_generation": 96.06,
+        "european_context": 70,
+        "output_usefulness": 99.73
+      },
+      "overall": 96.27,
+      "range": [
+        95.54,
+        96.99
+      ],
+      "sample_scores": [
+        95.54,
+        96.99
+      ],
+      "provider_reported_candidate_cost_usd": 0.088013,
+      "provider_reported_judge_cost_usd": 0.239988,
+      "median_latency_ms": 90522,
+      "finish_reasons": [
+        "stop"
+      ],
+      "openrouter": {
+        "requested_id": "x-ai/grok-4.5",
+        "returned_models": [
+          "x-ai/grok-4.5"
+        ],
+        "providers": [
+          "xAI"
+        ],
+        "endpoint_tags": [
+          "xai"
+        ],
+        "quantizations": [
+          "unknown"
+        ],
+        "context_length": 500000,
+        "pricing": {
+          "basis": "selected_endpoint_snapshot",
+          "endpoints": [
+            {
+              "tag": "xai",
+              "provider": "xAI",
+              "prompt_usd_per_million": 2,
+              "completion_usd_per_million": 6
+            }
+          ]
+        }
+      },
+      "caveat": null,
+      "rank": 2,
+      "provisional_tie": true
+    },
+    {
+      "model": {
+        "id": "openai/gpt-5.6-sol",
+        "slug": "gpt-5-6-sol",
+        "name": "GPT-5.6 Sol",
+        "provider_id": "openai"
+      },
+      "status": "complete",
+      "samples_completed": 2,
+      "candidate_samples_completed": 2,
+      "incomplete_samples": [],
+      "dimensions": {
+        "grounding": 87.31,
+        "commercial_judgement": 96.87,
+        "scepticism": 96.52,
+        "numerical_sanity": 100,
+        "risk_discovery": 94.16,
+        "question_generation": 94.51,
+        "european_context": 100,
+        "output_usefulness": 99.56
+      },
+      "overall": 95.5,
+      "range": [
+        95.11,
+        95.89
+      ],
+      "sample_scores": [
+        95.11,
+        95.89
+      ],
+      "provider_reported_candidate_cost_usd": 0.309278,
+      "provider_reported_judge_cost_usd": 0.249618,
+      "median_latency_ms": 100716,
+      "finish_reasons": [
+        "stop"
+      ],
+      "openrouter": {
+        "requested_id": "openai/gpt-5.6-sol",
+        "returned_models": [
+          "openai/gpt-5.6-sol"
+        ],
+        "providers": [
+          "OpenAI"
+        ],
+        "endpoint_tags": [
+          "openai"
+        ],
+        "quantizations": [
+          "unknown"
+        ],
+        "context_length": 1050000,
+        "pricing": {
+          "basis": "selected_endpoint_snapshot",
+          "endpoints": [
+            {
+              "tag": "openai",
+              "provider": "OpenAI",
+              "prompt_usd_per_million": 5,
+              "completion_usd_per_million": 30
+            }
+          ]
+        }
+      },
+      "caveat": null,
+      "rank": 3,
+      "provisional_tie": true
+    },
+    {
+      "model": {
+        "id": "google/gemini-3.5-flash",
+        "slug": "gemini-3-5-flash",
+        "name": "Gemini 3.5 Flash",
+        "provider_id": "google"
+      },
+      "status": "complete",
+      "samples_completed": 2,
+      "candidate_samples_completed": 2,
+      "incomplete_samples": [],
+      "dimensions": {
+        "grounding": 86.67,
+        "commercial_judgement": 81.13,
+        "scepticism": 88.8,
+        "numerical_sanity": 100,
+        "risk_discovery": 91.69,
+        "question_generation": 92.11,
+        "european_context": 96.66,
+        "output_usefulness": 74.55
+      },
+      "overall": 89.07,
+      "range": [
+        86.88,
+        91.26
+      ],
+      "sample_scores": [
+        86.88,
+        91.26
+      ],
+      "provider_reported_candidate_cost_usd": 0.098574,
+      "provider_reported_judge_cost_usd": 0.626701,
+      "median_latency_ms": 120901,
+      "finish_reasons": [
+        "stop"
+      ],
+      "openrouter": {
+        "requested_id": "google/gemini-3.5-flash",
+        "returned_models": [
+          "google/gemini-3.5-flash"
+        ],
+        "providers": [
+          "Google"
+        ],
+        "endpoint_tags": [
+          "google-vertex/global"
+        ],
+        "quantizations": [
+          "unknown"
+        ],
+        "context_length": 1048576,
+        "pricing": {
+          "basis": "selected_endpoint_snapshot",
+          "endpoints": [
+            {
+              "tag": "google-vertex/global",
+              "provider": "Google",
+              "prompt_usd_per_million": 1.5,
+              "completion_usd_per_million": 9
+            }
+          ]
+        }
+      },
+      "caveat": null,
+      "rank": 4,
+      "provisional_tie": true
+    },
+    {
+      "model": {
+        "id": "anthropic/claude-opus-4.8",
+        "slug": "claude-opus-4-8",
+        "name": "Claude Opus 4.8",
+        "provider_id": "anthropic"
+      },
+      "status": "complete",
+      "samples_completed": 2,
+      "candidate_samples_completed": 2,
+      "incomplete_samples": [],
+      "dimensions": {
+        "grounding": 91.25,
+        "commercial_judgement": 77.7,
+        "scepticism": 96.52,
+        "numerical_sanity": 100,
+        "risk_discovery": 94.16,
+        "question_generation": 66.47,
+        "european_context": 100,
+        "output_usefulness": 85.68
+      },
+      "overall": 88.76,
+      "range": [
+        80.15,
+        97.37
+      ],
+      "sample_scores": [
+        97.37,
+        80.15
+      ],
+      "provider_reported_candidate_cost_usd": 0.51831,
+      "provider_reported_judge_cost_usd": 0.130233,
+      "median_latency_ms": 79072,
+      "finish_reasons": [
+        "stop"
+      ],
+      "openrouter": {
+        "requested_id": "anthropic/claude-opus-4.8",
+        "returned_models": [
+          "anthropic/claude-opus-4.8"
+        ],
+        "providers": [
+          "Azure"
+        ],
+        "endpoint_tags": [
+          "azure/us-east-2"
+        ],
+        "quantizations": [
+          "unknown"
+        ],
+        "context_length": 1000000,
+        "pricing": {
+          "basis": "selected_endpoint_snapshot",
+          "endpoints": [
+            {
+              "tag": "azure/us-east-2",
+              "provider": "Azure",
+              "prompt_usd_per_million": 5,
+              "completion_usd_per_million": 25
+            }
+          ]
+        }
+      },
+      "caveat": null,
+      "rank": 5,
+      "provisional_tie": true
+    },
+    {
+      "model": {
+        "id": "deepseek/deepseek-v4-pro",
+        "slug": "deepseek-v4-pro",
+        "name": "DeepSeek V4 Pro",
+        "provider_id": "deepseek"
+      },
+      "status": "complete",
+      "samples_completed": 2,
+      "candidate_samples_completed": 2,
+      "incomplete_samples": [],
+      "dimensions": {
+        "grounding": 81.97,
+        "commercial_judgement": 90.69,
+        "scepticism": 87.23,
+        "numerical_sanity": 100,
+        "risk_discovery": 81.06,
+        "question_generation": 91.25,
+        "european_context": 85,
+        "output_usefulness": 91.5
+      },
+      "overall": 88.63,
+      "range": [
+        87.87,
+        89.39
+      ],
+      "sample_scores": [
+        87.87,
+        89.39
+      ],
+      "provider_reported_candidate_cost_usd": 0.03855,
+      "provider_reported_judge_cost_usd": 0.322825,
+      "median_latency_ms": 188462,
+      "finish_reasons": [
+        "stop"
+      ],
+      "openrouter": {
+        "requested_id": "deepseek/deepseek-v4-pro",
+        "returned_models": [
+          "deepseek/deepseek-v4-pro"
+        ],
+        "providers": [
+          "StreamLake"
+        ],
+        "endpoint_tags": [
+          "streamlake/fp8"
+        ],
+        "quantizations": [
+          "fp8"
+        ],
+        "context_length": 1048576,
+        "pricing": {
+          "basis": "selected_endpoint_snapshot",
+          "endpoints": [
+            {
+              "tag": "streamlake/fp8",
+              "provider": "StreamLake",
+              "prompt_usd_per_million": 0.7134,
+              "completion_usd_per_million": 1.4268
+            }
+          ]
+        }
+      },
+      "caveat": null,
+      "rank": 6,
+      "provisional_tie": true
+    },
+    {
+      "model": {
+        "id": "z-ai/glm-5.2",
+        "slug": "glm-5-2",
+        "name": "GLM 5.2",
+        "provider_id": "zai"
+      },
+      "status": "complete",
+      "samples_completed": 2,
+      "candidate_samples_completed": 2,
+      "incomplete_samples": [],
+      "dimensions": {
+        "grounding": 85.91,
+        "commercial_judgement": 95.85,
+        "scepticism": 88.39,
+        "numerical_sanity": 90.68,
+        "risk_discovery": 83.19,
+        "question_generation": 87.3,
+        "european_context": 70,
+        "output_usefulness": 90.44
+      },
+      "overall": 88.15,
+      "range": [
+        86.62,
+        89.68
+      ],
+      "sample_scores": [
+        89.68,
+        86.62
+      ],
+      "provider_reported_candidate_cost_usd": 0.017954,
+      "provider_reported_judge_cost_usd": 0.242846,
+      "median_latency_ms": 139680,
+      "finish_reasons": [
+        "stop"
+      ],
+      "openrouter": {
+        "requested_id": "z-ai/glm-5.2",
+        "returned_models": [
+          "z-ai/glm-5.2"
+        ],
+        "providers": [
+          "StreamLake"
+        ],
+        "endpoint_tags": [
+          "streamlake/fp8"
+        ],
+        "quantizations": [
+          "fp8"
+        ],
+        "context_length": 1048576,
+        "pricing": {
+          "basis": "selected_endpoint_snapshot",
+          "endpoints": [
+            {
+              "tag": "streamlake/fp8",
+              "provider": "StreamLake",
+              "prompt_usd_per_million": 0.2737,
+              "completion_usd_per_million": 0.8602000000000001
+            }
+          ]
+        }
+      },
+      "caveat": null,
+      "rank": 7,
+      "provisional_tie": true
+    },
+    {
+      "model": {
+        "id": "qwen/qwen3.7-max",
+        "slug": "qwen3-7-max",
+        "name": "Qwen3.7 Max",
+        "provider_id": "alibaba"
+      },
+      "status": "complete",
+      "samples_completed": 2,
+      "candidate_samples_completed": 2,
+      "incomplete_samples": [],
+      "dimensions": {
+        "grounding": 66.48,
+        "commercial_judgement": 78.38,
+        "scepticism": 60.8,
+        "numerical_sanity": 57.5,
+        "risk_discovery": 45.88,
+        "question_generation": 80.44,
+        "european_context": 70,
+        "output_usefulness": 73.52
+      },
+      "overall": 65.5,
+      "range": [
+        44.58,
+        86.42
+      ],
+      "sample_scores": [
+        44.58,
+        86.42
+      ],
+      "provider_reported_candidate_cost_usd": 0.089527,
+      "provider_reported_judge_cost_usd": 0.321651,
+      "median_latency_ms": 78622,
+      "finish_reasons": [
+        "stop"
+      ],
+      "openrouter": {
+        "requested_id": "qwen/qwen3.7-max",
+        "returned_models": [
+          "qwen/qwen3.7-max"
+        ],
+        "providers": [
+          "Alibaba"
+        ],
+        "endpoint_tags": [
+          "alibaba"
+        ],
+        "quantizations": [
+          "unknown"
+        ],
+        "context_length": 1000000,
+        "pricing": {
+          "basis": "selected_endpoint_snapshot",
+          "endpoints": [
+            {
+              "tag": "alibaba",
+              "provider": "Alibaba",
+              "prompt_usd_per_million": 1.475,
+              "completion_usd_per_million": 4.425
+            }
+          ]
+        }
+      },
+      "caveat": null,
+      "rank": 8,
+      "provisional_tie": false
+    },
+    {
+      "model": {
+        "id": "anthropic/claude-fable-5",
+        "slug": "claude-fable-5",
+        "name": "Claude Fable 5",
+        "provider_id": "anthropic"
+      },
+      "status": "unavailable",
+      "samples_completed": 0,
+      "candidate_samples_completed": 0,
+      "incomplete_samples": [
+        {
+          "sample": 1,
+          "stage": "candidate",
+          "reason": "Claude Fable 5 is not available. Learn more: https://www.anthropic.com/news/fable-mythos-access"
+        },
+        {
+          "sample": 2,
+          "stage": "candidate",
+          "reason": "Claude Fable 5 is not available. Learn more: https://www.anthropic.com/news/fable-mythos-access"
+        }
+      ],
+      "openrouter": {
+        "requested_id": "anthropic/claude-fable-5",
+        "returned_models": [],
+        "providers": [],
+        "endpoint_tags": [],
+        "quantizations": [],
+        "context_length": 1000000,
+        "pricing": null
+      },
+      "caveat": null
+    }
+  ]
+}

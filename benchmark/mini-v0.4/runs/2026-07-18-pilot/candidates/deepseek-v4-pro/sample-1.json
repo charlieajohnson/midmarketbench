@@ -1,0 +1,29 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:22:10.715Z",
+  "completed_at": "2026-07-18T20:25:10.725Z",
+  "requested_model": "deepseek/deepseek-v4-pro",
+  "returned_model": null,
+  "provider": null,
+  "generation_id": null,
+  "finish_reason": null,
+  "latency_ms": 180009,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0,
+  "cost_basis": "not_charged",
+  "usage": null,
+  "generation": null,
+  "request_sha256": "0899d01a0bcf8fc2799f98f10fa9ca83f925400e2d8aef7698976f6ee28217a7",
+  "error": {
+    "message": "Completion did not contain JSON text.",
+    "status": null
+  },
+  "model_config": {
+    "id": "deepseek/deepseek-v4-pro",
+    "slug": "deepseek-v4-pro",
+    "name": "DeepSeek V4 Pro",
+    "provider_id": "deepseek"
+  }
+}

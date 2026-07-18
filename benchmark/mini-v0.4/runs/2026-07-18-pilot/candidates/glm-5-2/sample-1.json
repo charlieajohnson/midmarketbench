@@ -1,0 +1,53 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:18:00.878Z",
+  "completed_at": "2026-07-18T20:20:43.547Z",
+  "requested_model": "z-ai/glm-5.2",
+  "returned_model": "z-ai/glm-5.2",
+  "provider": "BaseTen",
+  "generation_id": "gen-1784405909-Qfk7jvazofVVIkjBVrHY",
+  "finish_reason": "length",
+  "latency_ms": 69612,
+  "actual_cost_usd": 0.029044,
+  "accounted_cost_usd": 0.029044,
+  "cost_basis": "openrouter_reported",
+  "usage": {
+    "prompt_tokens": 1436,
+    "completion_tokens": 6144,
+    "total_tokens": 7580,
+    "cost": 0.029044,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.029044,
+      "upstream_inference_prompt_cost": 0.0020104,
+      "upstream_inference_completions_cost": 0.0270336
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 3638,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "generation": {
+    "error": "The operation was aborted due to timeout"
+  },
+  "request_sha256": "976294cc9433098db207421b62b1aa8b14e3149f7e9d083a480643761c660763",
+  "error": {
+    "message": "Unterminated string in JSON at position 8831 (line 175 column 604)",
+    "status": null
+  },
+  "model_config": {
+    "id": "z-ai/glm-5.2",
+    "slug": "glm-5-2",
+    "name": "GLM 5.2",
+    "provider_id": "zai"
+  }
+}

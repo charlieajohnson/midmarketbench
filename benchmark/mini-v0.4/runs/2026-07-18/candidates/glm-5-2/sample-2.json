@@ -1,0 +1,47 @@
+{
+  "kind": "candidate-2",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:44:24.550Z",
+  "completed_at": "2026-07-18T20:47:24.580Z",
+  "requested_model": "z-ai/glm-5.2",
+  "returned_model": null,
+  "provider": null,
+  "router_metadata": null,
+  "generation_id": null,
+  "finish_reason": null,
+  "native_finish_reason": null,
+  "latency_ms": 180022,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0.0058190575000000005,
+  "cost_basis": "ambiguous_request_maximum",
+  "usage": null,
+  "generation": null,
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "streamlake/fp8",
+    "provider_name": "StreamLake",
+    "quantization": "fp8",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 0.2737,
+    "maximum_completion_usd_per_million": 0.8602000000000001
+  },
+  "request_sha256": "9486710c1b68fd5039895d04416804451866feb1500f6e6dfdf202648de691d3",
+  "error": {
+    "message": "The operation was aborted due to timeout",
+    "status": null,
+    "body": null
+  },
+  "model_config": {
+    "id": "z-ai/glm-5.2",
+    "slug": "glm-5-2",
+    "name": "GLM 5.2",
+    "provider_id": "zai"
+  }
+}

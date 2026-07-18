@@ -1,0 +1,100 @@
+{
+  "kind": "candidate-2",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T21:10:02.562Z",
+  "completed_at": "2026-07-18T21:14:03.035Z",
+  "requested_model": "qwen/qwen3.7-max",
+  "returned_model": "qwen/qwen3.7-max",
+  "provider": "Alibaba",
+  "router_metadata": {
+    "requested": "qwen/qwen3.7-max",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=1, selected=Alibaba",
+    "attempt": 1,
+    "is_byok": false,
+    "endpoints": {
+      "total": 1,
+      "available": [
+        {
+          "provider": "Alibaba",
+          "model": "qwen/qwen3.7-max-20260520",
+          "selected": true
+        }
+      ]
+    }
+  },
+  "generation_id": "gen-1784409087-UDvhbt2q59VzCLg4vNR9",
+  "finish_reason": "stop",
+  "native_finish_reason": "stop",
+  "latency_ms": 172743,
+  "actual_cost_usd": 0.023660475,
+  "accounted_cost_usd": 0.023660475,
+  "cost_basis": "openrouter_reported",
+  "usage": {
+    "prompt_tokens": 1569,
+    "completion_tokens": 4824,
+    "total_tokens": 6393,
+    "cost": 0.023660475,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.023660475,
+      "upstream_inference_prompt_cost": 0.002314275,
+      "upstream_inference_completions_cost": 0.0213462
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 2048,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "generation": {
+    "id": "gen-1784409087-UDvhbt2q59VzCLg4vNR9",
+    "model": "qwen/qwen3.7-max-20260520",
+    "provider_name": "Alibaba",
+    "native_tokens_prompt": 1569,
+    "native_tokens_completion": 4824,
+    "native_tokens_reasoning": 2048,
+    "num_media_prompt": null,
+    "num_media_completion": 0,
+    "latency": 38249,
+    "generation_time": 87507,
+    "total_cost": 0.023660475,
+    "created_at": "2026-07-18T21:11:27.628Z",
+    "finish_reason": "stop"
+  },
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "alibaba",
+    "provider_name": "Alibaba",
+    "quantization": "unknown",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 1.476475,
+    "maximum_completion_usd_per_million": 4.429424999999999
+  },
+  "request_sha256": "50cbcc5b481c05fa95998c8714a7b035c7c455b56a04a7db331e60de8632806f",
+  "error": {
+    "message": "Local schema validation failed: metrics.2.evidence_ids.1: Unknown packet ID.",
+    "status": null,
+    "body": null
+  },
+  "model_config": {
+    "id": "qwen/qwen3.7-max",
+    "slug": "qwen3-7-max",
+    "name": "Qwen3.7 Max",
+    "provider_id": "alibaba"
+  }
+}

@@ -3,12 +3,12 @@ import { Badge } from "@/components/common/Badge";
 import { formatCurrencyMillions, formatPercent } from "@/lib/format";
 import type { BenchmarkCase } from "@/lib/types";
 
-export function CaseCard({ benchmarkCase }: { benchmarkCase: BenchmarkCase }) {
+export function CaseCard({ benchmarkCase, badge = "Scored case" }: { benchmarkCase: BenchmarkCase; badge?: string }) {
   return (
     <Link className="card card-pad case-card" href={`/cases/${benchmarkCase.slug}`}>
       <div>
         <div className="case-card-kicker">
-          <Badge>Live case</Badge>
+          <Badge>{badge}</Badge>
           <Badge>{benchmarkCase.difficulty}</Badge>
         </div>
         <h3>{benchmarkCase.name}</h3>

@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-07-18T21:56:05Z",
+  "source": "OpenRouter API key metadata endpoint",
+  "key_name": "MidMarketBench",
+  "dashboard_usage_usd": 5.315590424,
+  "dashboard_limit_usd": 7.5,
+  "local_accounted_at_observation_usd": 7.373867,
+  "note": "The authenticated key metadata endpoint is authoritative for settled key spend; local accounting reserves request maxima for ambiguous dispatches."
+}

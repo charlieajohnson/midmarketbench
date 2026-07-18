@@ -26,12 +26,13 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
   ]);
   if (!benchmarkCase) notFound();
   const tasks = allTasks.filter((task) => benchmarkCase.taskKeys.includes(task.key));
+  const isObservedCase = benchmarkCase.slug === "norwyn-controls";
   const facts = [
     ["Sector", benchmarkCase.subsector],
     ["Geography", benchmarkCase.geography],
     ["ARR", formatCurrencyMillions(benchmarkCase.arrEurM)],
     ["Growth", formatPercent(benchmarkCase.growthRate)],
-    ["EBITDA margin", formatPercent(benchmarkCase.ebitdaMargin)],
+    ["Reported EBITDA margin", formatPercent(benchmarkCase.ebitdaMargin)],
     ["Ownership", benchmarkCase.ownershipContext],
     ["Difficulty", benchmarkCase.difficulty],
     ["Status", benchmarkCase.confidentiality],
@@ -41,6 +42,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
       <header>
         <div style={{ display: "flex", gap: 8, marginBottom: 18 }}>
           <Badge>Synthetic case</Badge>
+          <Badge>{isObservedCase ? "Scored · 18 Jul 2026" : "Unscored legacy example"}</Badge>
           <Badge>{benchmarkCase.difficulty}</Badge>
         </div>
         <h1 className="display page-title">{benchmarkCase.name}</h1>
@@ -63,8 +65,9 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
         <p className="eyebrow">Diligence packet</p>
         <h2 className="section-title">Evidence, not exposition.</h2>
         <p className="lede">
-          The first pass renders core tables inline. The repository retains the same packet as typed data and raw CSV
-          for later evaluation runs.
+          {isObservedCase
+            ? "This is the complete source packet supplied to every candidate model in the observed run. The benchmark repository retains the immutable prompts, responses and score artefacts."
+            : "This earlier illustrative packet was not used for the 18 July 2026 leaderboard and remains available as an unscored design example."}
         </p>
         <div className="card card-pad" style={{ marginTop: 28 }}>
           <CaseFileList files={benchmarkCase.files} />
@@ -72,7 +75,11 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
       </section>
       <section className="section">
         <p className="eyebrow">Tasks</p>
-        <h2 className="section-title">Five views of the same evidence.</h2>
+        <h2 className="section-title">
+          {isObservedCase
+            ? `${tasks.length} tasks, one structured decision.`
+            : `${tasks.length} views of the same evidence.`}
+        </h2>
         <div className="grid-3" style={{ marginTop: 28 }}>
           {tasks.map((task) => (
             <TaskCard task={task} key={task.key} />

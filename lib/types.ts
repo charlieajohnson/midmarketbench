@@ -25,9 +25,9 @@ export type Model = {
   name: string;
   providerId: string;
   version: string;
-  release: string;
+  release: string | null;
   contextWindow: string;
-  openWeights: boolean;
+  openWeights: boolean | null;
   isPreview?: boolean;
   sourceUrl: string;
 };
@@ -44,12 +44,135 @@ export type Dimension = {
 
 export type LeaderboardRow = {
   rank: number;
-  delta: number | "new";
   model: Model;
   provider: Provider;
   scores: ScoreSet;
   overall: number;
+  range: [number, number];
+  sampleScores: number[];
+  samplesCompleted: number;
+  samplesRequested: number;
+  providerReportedCandidateCostUsd: number;
+  providerReportedJudgeCostUsd: number;
+  medianLatencyMs: number;
+  provisionalTie: boolean;
+  endpoint: OpenRouterEndpoint;
+  caveat: string | null;
   mode: "Closed-book" | "Web-enabled" | "Agentic";
+};
+
+export type BenchmarkDataStatus = "observed" | "pending";
+export type ModelResultStatus = "complete" | "partial" | "incomplete" | "unavailable" | "pending";
+
+export type IncompleteSample = {
+  sample: number;
+  stage: string;
+  reason: string;
+};
+
+export type OpenRouterEndpoint = {
+  requestedId: string;
+  returnedModels: string[];
+  providers: string[];
+  endpointTags: string[];
+  quantizations: string[];
+  contextLength: number | null;
+  pricing: {
+    basis: "selected_endpoint_snapshot";
+    endpoints: Array<{
+      tag: string;
+      provider: string;
+      promptUsdPerMillion: number;
+      completionUsdPerMillion: number;
+    }>;
+  } | null;
+};
+
+type ScoredModelBenchmarkResultBase = {
+  model: Model;
+  provider: Provider;
+  samplesCompleted: number;
+  candidateSamplesCompleted: number;
+  samplesRequested: number;
+  incompleteSamples: IncompleteSample[];
+  scores: ScoreSet;
+  overall: number;
+  range: [number, number];
+  sampleScores: number[];
+  providerReportedCandidateCostUsd: number;
+  providerReportedJudgeCostUsd: number;
+  medianLatencyMs: number;
+  finishReasons: string[];
+  endpoint: OpenRouterEndpoint;
+  caveat: string | null;
+};
+
+export type CompleteModelBenchmarkResult = ScoredModelBenchmarkResultBase & {
+  status: "complete";
+  rank: number;
+  provisionalTie: boolean;
+};
+
+export type PartialModelBenchmarkResult = ScoredModelBenchmarkResultBase & {
+  status: "partial";
+  rank: null;
+  provisionalTie: false;
+};
+
+export type ScoredModelBenchmarkResult = CompleteModelBenchmarkResult | PartialModelBenchmarkResult;
+
+export type UnscoredModelBenchmarkResult = {
+  status: "incomplete" | "unavailable" | "pending";
+  model: Model;
+  provider: Provider;
+  samplesCompleted: 0;
+  candidateSamplesCompleted: number;
+  samplesRequested: number;
+  incompleteSamples: IncompleteSample[];
+  endpoint: OpenRouterEndpoint;
+  caveat: string | null;
+  rank: null;
+  provisionalTie: false;
+};
+
+export type ModelBenchmarkResult = ScoredModelBenchmarkResult | UnscoredModelBenchmarkResult;
+
+export type BenchmarkRunSummary = {
+  dataStatus: BenchmarkDataStatus;
+  dataSource: string;
+  benchmarkId: string;
+  methodologyVersion: string;
+  evaluatedAt: string;
+  runId: string | null;
+  mode: "Closed-book" | "Web-enabled" | "Agentic";
+  caseId: string;
+  caseName: string;
+  caseConfidentiality: string;
+  tasks: number;
+  samplesPerModel: number;
+  modelsRequested: number;
+  modelsCompleted: number;
+  modelsPartial: number;
+  modelsIncomplete: number;
+  modelsUnavailable: number;
+  totalSpendUsd: number | null;
+  conservativelyAccountedSpendUsd: number | null;
+  providerReportedSpendUsd: number | null;
+  spendBasis: string | null;
+  localBudgetUsd: number;
+  promptSha256: string | null;
+  judgeSystemPromptSha256: string | null;
+  candidateSchemaVariants: Array<{
+    id: string;
+    responseFormatSha256: string;
+    acceptedSamples: number;
+  }>;
+  caseSha256: string | null;
+  modelSnapshotSha256: string | null;
+  limitation: string;
+  scoring: string;
+  reasoningPolicy: string;
+  tieRule: string;
 };
 
 export type CaseTable = {
@@ -61,6 +184,7 @@ export type CaseFile = {
   filename: string;
   type: "Markdown" | "CSV" | "JSON";
   description: string;
+  content?: string;
   table?: CaseTable;
 };
 

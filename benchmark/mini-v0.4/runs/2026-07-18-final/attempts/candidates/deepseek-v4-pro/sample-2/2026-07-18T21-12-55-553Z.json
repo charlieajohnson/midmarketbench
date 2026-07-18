@@ -1,0 +1,88 @@
+{
+  "kind": "candidate-2",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T21:12:55.553Z",
+  "completed_at": "2026-07-18T21:16:26.469Z",
+  "requested_model": "deepseek/deepseek-v4-pro",
+  "returned_model": "deepseek/deepseek-v4-pro",
+  "provider": "StreamLake",
+  "router_metadata": {
+    "requested": "deepseek/deepseek-v4-pro",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=1, selected=StreamLake",
+    "attempt": 1,
+    "is_byok": false,
+    "endpoints": {
+      "total": 17,
+      "available": [
+        {
+          "provider": "StreamLake",
+          "model": "deepseek/deepseek-v4-pro-20260423",
+          "selected": true
+        }
+      ]
+    }
+  },
+  "generation_id": "gen-1784409242-QBtncpoVjLjrjkL8NZ5m",
+  "finish_reason": "length",
+  "native_finish_reason": "length",
+  "latency_ms": 207515,
+  "actual_cost_usd": 0.0089743342,
+  "accounted_cost_usd": 0.0089743342,
+  "cost_basis": "openrouter_reported",
+  "usage": {
+    "prompt_tokens": 1465,
+    "completion_tokens": 6144,
+    "total_tokens": 7609,
+    "cost": 0.0089743342,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1280,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0089743342,
+      "upstream_inference_prompt_cost": 0.000208075,
+      "upstream_inference_completions_cost": 0.0087662592
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 6143,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "generation": {
+    "error": "Generation gen-1784409242-QBtncpoVjLjrjkL8NZ5m not found"
+  },
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "streamlake/fp8",
+    "provider_name": "StreamLake",
+    "quantization": "fp8",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 0.7141134,
+    "maximum_completion_usd_per_million": 1.4282268
+  },
+  "request_sha256": "96e4ebfc039d9b76ebb6fb3eeb77fc32e112bc15a34b1f1318a2a92652796a58",
+  "error": {
+    "message": "Completion finish reason was length, not stop.",
+    "status": null,
+    "body": null
+  },
+  "model_config": {
+    "id": "deepseek/deepseek-v4-pro",
+    "slug": "deepseek-v4-pro",
+    "name": "DeepSeek V4 Pro",
+    "provider_id": "deepseek"
+  }
+}

@@ -3,6 +3,7 @@ import type { Provider } from "@/lib/types";
 export const providers: Provider[] = [
   { id: "openai", name: "OpenAI", slug: "openai", website: "https://openai.com" },
   { id: "anthropic", name: "Anthropic", slug: "anthropic", website: "https://anthropic.com" },
+  { id: "moonshot", name: "Moonshot AI", slug: "moonshot", website: "https://moonshot.ai" },
   { id: "google", name: "Google", slug: "google", website: "https://deepmind.google" },
   { id: "xai", name: "xAI", slug: "xai", website: "https://x.ai" },
   { id: "zai", name: "Z.ai", slug: "zai", website: "https://z.ai" },

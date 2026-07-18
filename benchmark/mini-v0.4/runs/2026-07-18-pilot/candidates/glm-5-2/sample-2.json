@@ -1,0 +1,65 @@
+{
+  "kind": "candidate-2",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:18:01.498Z",
+  "completed_at": "2026-07-18T20:22:11.064Z",
+  "requested_model": "z-ai/glm-5.2",
+  "returned_model": "z-ai/glm-5.2",
+  "provider": "StreamLake",
+  "generation_id": "gen-1784405950-dCckkgEbAKQLYmjKSTZT",
+  "finish_reason": "length",
+  "latency_ms": 178375,
+  "actual_cost_usd": 0.00546852426,
+  "accounted_cost_usd": 0.00546852426,
+  "cost_basis": "openrouter_reported",
+  "usage": {
+    "prompt_tokens": 1435,
+    "completion_tokens": 6144,
+    "total_tokens": 7579,
+    "cost": 0.00546852426,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1064,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00546852426,
+      "upstream_inference_prompt_cost": 0.00015642186,
+      "upstream_inference_completions_cost": 0.0053121024
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 3902,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "generation": {
+    "id": "gen-1784405950-dCckkgEbAKQLYmjKSTZT",
+    "model": "z-ai/glm-5.2-20260616",
+    "provider_name": "StreamLake",
+    "native_tokens_prompt": 1435,
+    "native_tokens_completion": 6144,
+    "native_tokens_reasoning": 3902,
+    "num_media_prompt": null,
+    "num_media_completion": 0,
+    "latency": 1070,
+    "generation_time": 109219,
+    "total_cost": 0.005468524,
+    "created_at": "2026-07-18T20:19:10.569Z",
+    "finish_reason": "length"
+  },
+  "request_sha256": "976294cc9433098db207421b62b1aa8b14e3149f7e9d083a480643761c660763",
+  "error": {
+    "message": "Expected double-quoted property name in JSON at position 7855 (line 122 column 1)",
+    "status": null
+  },
+  "model_config": {
+    "id": "z-ai/glm-5.2",
+    "slug": "glm-5-2",
+    "name": "GLM 5.2",
+    "provider_id": "zai"
+  }
+}

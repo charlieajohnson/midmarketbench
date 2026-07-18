@@ -1,0 +1,47 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:59:37.847Z",
+  "completed_at": "2026-07-18T21:03:37.851Z",
+  "requested_model": "x-ai/grok-4.5",
+  "returned_model": null,
+  "provider": null,
+  "router_metadata": null,
+  "generation_id": null,
+  "finish_reason": null,
+  "native_finish_reason": null,
+  "latency_ms": 240002,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0.040806766,
+  "cost_basis": "ambiguous_request_maximum",
+  "usage": null,
+  "generation": null,
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "xai",
+    "provider_name": "xAI",
+    "quantization": "unknown",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 2.002,
+    "maximum_completion_usd_per_million": 6.005999999999999
+  },
+  "request_sha256": "ae13fd42566b6db386ce4c4b466f01233f096740d6219c848434e8937037d538",
+  "error": {
+    "message": "The operation was aborted due to timeout",
+    "status": null,
+    "body": null
+  },
+  "model_config": {
+    "id": "x-ai/grok-4.5",
+    "slug": "grok-4-5",
+    "name": "Grok 4.5",
+    "provider_id": "xai"
+  }
+}

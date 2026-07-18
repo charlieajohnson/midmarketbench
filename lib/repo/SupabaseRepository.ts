@@ -2,9 +2,11 @@ import type { BenchmarkRepository } from "@/lib/repo/Repository";
 import type {
   AnswerKeyItem,
   BenchmarkCase,
+  BenchmarkRunSummary,
   Dimension,
   LeaderboardRow,
   Model,
+  ModelBenchmarkResult,
   Provider,
   SampleOutput,
   Task,
@@ -34,6 +36,18 @@ export class SupabaseRepository implements BenchmarkRepository {
   }
   getLeaderboard(versionLabel?: string): Promise<LeaderboardRow[]> {
     return unsupported("getLeaderboard", versionLabel);
+  }
+  getRunSummary(): Promise<BenchmarkRunSummary> {
+    return unsupported("getRunSummary");
+  }
+  getModelResults(): Promise<ModelBenchmarkResult[]> {
+    return unsupported("getModelResults");
+  }
+  getModelResult(slug: string): Promise<ModelBenchmarkResult | undefined> {
+    return unsupported("getModelResult", slug);
+  }
+  getUnavailableModels(): Promise<ModelBenchmarkResult[]> {
+    return unsupported("getUnavailableModels");
   }
   getCases(): Promise<BenchmarkCase[]> {
     return unsupported("getCases");

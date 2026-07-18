@@ -1,0 +1,77 @@
+{
+  "kind": "candidate-2",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:38:52.684Z",
+  "completed_at": "2026-07-18T20:38:52.898Z",
+  "requested_model": "openai/gpt-5.6-sol",
+  "returned_model": null,
+  "provider": null,
+  "router_metadata": {
+    "requested": "openai/gpt-5.6-sol",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=3",
+    "attempt": 0,
+    "is_byok": false,
+    "endpoints": {
+      "total": 3,
+      "available": [
+        {
+          "provider": "OpenAI",
+          "model": "openai/gpt-5.6-sol-20260709",
+          "selected": false
+        },
+        {
+          "provider": "Azure",
+          "model": "openai/gpt-5.6-sol-20260709",
+          "selected": false
+        },
+        {
+          "provider": "Azure",
+          "model": "openai/gpt-5.6-sol-20260709",
+          "selected": false
+        }
+      ]
+    }
+  },
+  "generation_id": null,
+  "finish_reason": null,
+  "native_finish_reason": null,
+  "latency_ms": 214,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0,
+  "cost_basis": "not_charged",
+  "usage": null,
+  "generation": null,
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "openai/flex",
+    "provider_name": "OpenAI",
+    "quantization": "unknown",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 2.5,
+    "maximum_completion_usd_per_million": 15
+  },
+  "request_sha256": "bd10050087a71c7a418d7d79f4a8c12fb9e4b5e835bd4bfd7296a365643741ef",
+  "error": {
+    "message": "No endpoints found that satisfy the max price for this request",
+    "status": 404,
+    "body": {
+      "message": "No endpoints found that satisfy the max price for this request",
+      "code": 404
+    }
+  },
+  "model_config": {
+    "id": "openai/gpt-5.6-sol",
+    "slug": "gpt-5-6-sol",
+    "name": "GPT-5.6 Sol",
+    "provider_id": "openai"
+  }
+}

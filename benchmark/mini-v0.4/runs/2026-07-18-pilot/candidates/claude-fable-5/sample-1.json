@@ -1,0 +1,29 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:10:43.890Z",
+  "completed_at": "2026-07-18T20:10:44.631Z",
+  "requested_model": "anthropic/claude-fable-5",
+  "returned_model": null,
+  "provider": null,
+  "generation_id": null,
+  "finish_reason": null,
+  "latency_ms": 738,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0,
+  "cost_basis": "not_charged",
+  "usage": null,
+  "generation": null,
+  "request_sha256": "19698567f7af50315ef57c3631105211f0ff2c69a983eb14e002d0b20fa48967",
+  "error": {
+    "message": "Provider returned error",
+    "status": 400
+  },
+  "model_config": {
+    "id": "anthropic/claude-fable-5",
+    "slug": "claude-fable-5",
+    "name": "Claude Fable 5",
+    "provider_id": "anthropic"
+  }
+}

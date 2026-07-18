@@ -1,0 +1,104 @@
+{
+  "kind": "judge-glm-5-2-sample-2",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T21:33:35.071Z",
+  "completed_at": "2026-07-18T21:34:18.213Z",
+  "requested_model": "anthropic/claude-sonnet-5",
+  "returned_model": "anthropic/claude-sonnet-5",
+  "provider": "Azure",
+  "router_metadata": {
+    "requested": "anthropic/claude-sonnet-5",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=1, selected=Azure",
+    "attempt": 1,
+    "is_byok": false,
+    "endpoints": {
+      "total": 7,
+      "available": [
+        {
+          "provider": "Azure",
+          "model": "anthropic/claude-sonnet-5-20260630",
+          "selected": true
+        }
+      ]
+    }
+  },
+  "generation_id": "gen-1784410423-JR5svxFhXzglYNJvrrwC",
+  "finish_reason": "length",
+  "native_finish_reason": "max_tokens",
+  "latency_ms": 30721,
+  "actual_cost_usd": 0.030082,
+  "accounted_cost_usd": 0.030082,
+  "cost_basis": "openrouter_reported",
+  "usage": {
+    "prompt_tokens": 4801,
+    "completion_tokens": 2048,
+    "total_tokens": 6849,
+    "cost": 0.030082,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.030082,
+      "upstream_inference_prompt_cost": 0.009602,
+      "upstream_inference_completions_cost": 0.02048
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 447,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "generation": {
+    "id": "gen-1784410423-JR5svxFhXzglYNJvrrwC",
+    "model": "anthropic/claude-sonnet-5-20260630",
+    "provider_name": "Azure",
+    "native_tokens_prompt": 4801,
+    "native_tokens_completion": 2048,
+    "native_tokens_reasoning": 447,
+    "num_media_prompt": null,
+    "num_media_completion": 0,
+    "latency": 4575,
+    "generation_time": 22247,
+    "total_cost": 0.030082,
+    "created_at": "2026-07-18T21:33:43.505Z",
+    "finish_reason": "length"
+  },
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "azure/us-east-2",
+    "provider_name": "Azure",
+    "quantization": "unknown",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 2.002,
+    "maximum_completion_usd_per_million": 10.009999999999998
+  },
+  "request_sha256": "fd30d75d69a82808af590495e880cba68a82e57550bb4b02ff4b18d3b8d802d9",
+  "error": {
+    "message": "Completion finish reason was length, not stop.",
+    "status": null,
+    "body": null
+  },
+  "rejected_output": null,
+  "model_config": {
+    "id": "anthropic/claude-sonnet-5",
+    "slug": "claude-sonnet-5-judge",
+    "provider_id": "anthropic"
+  }
+}

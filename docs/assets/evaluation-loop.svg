@@ -56,8 +56,8 @@
     <path class="arrow" d="M410 58 H430" />
     <rect class="step" x="440" y="0" width="180" height="116" rx="18" />
     <text class="label" x="464" y="42">Model run</text>
-    <text class="copy" x="464" y="70">GPT-5.5, Opus 4.8,</text>
-    <text class="copy" x="464" y="90">Gemini 3.5 Flash</text>
+    <text class="copy" x="464" y="70">Two observed samples</text>
+    <text class="copy" x="464" y="90">per available model</text>
     <path class="arrow" d="M630 58 H650" />
     <rect class="step" x="660" y="0" width="180" height="116" rx="18" />
     <text class="label" x="684" y="42">Checks</text>
@@ -66,8 +66,8 @@
     <path class="arrow" d="M850 58 H870" />
     <rect class="step" x="880" y="0" width="180" height="116" rx="18" />
     <text class="label" x="904" y="42">Calibration</text>
-    <text class="copy" x="904" y="70">Blind judge and</text>
-    <text class="copy" x="904" y="90">human review</text>
+    <text class="copy" x="904" y="70">Blinded anchors and</text>
+    <text class="copy" x="904" y="90">cross-family judges</text>
     <path class="arrow" d="M970 116 C970 162 700 162 550 184" />
     <rect class="step" x="440" y="190" width="180" height="116" rx="18" />
     <text class="label" x="464" y="232">Artefacts</text>

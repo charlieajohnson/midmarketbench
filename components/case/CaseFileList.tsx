@@ -18,6 +18,7 @@ export function CaseFileList({ files }: { files: CaseFile[] }) {
             </div>
             <Badge>{file.type}</Badge>
           </div>
+          {file.content && <pre className="case-file-content">{file.content}</pre>}
           {file.table && <DataTable table={file.table} label={file.description} />}
         </article>
       ))}

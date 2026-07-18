@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Badge } from "@/components/common/Badge";
-import { RankDelta } from "@/components/leaderboard/RankDelta";
 import { ScoreCell } from "@/components/leaderboard/ScoreCell";
 import { ModelLogo } from "@/components/model/ModelLogo";
 import { roundScore } from "@/lib/scoring";
@@ -35,9 +34,11 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
   const ariaSort = (key: SortKey) =>
     sort === key ? (descending ? ("descending" as const) : ("ascending" as const)) : ("none" as const);
 
+  const scoreRange = (row: LeaderboardRow) => row.range.map((score) => roundScore(score).toFixed(1)).join(" to ");
+
   return (
     <>
-      <div className="leaderboard-mobile" aria-label="Mobile synthetic model leaderboard">
+      <div className="leaderboard-mobile" aria-label="Mobile observed OpenRouter model leaderboard">
         <div className="mobile-sort-row" aria-label="Sort leaderboard">
           <button type="button" className="sort-button sort-chip" onClick={() => changeSort("rank")}>
             Rank
@@ -51,9 +52,7 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
         </div>
         <div className="rank-card-list">
           {sorted.map((row) => {
-            const topDimensions = [...dimensions]
-              .sort((a, b) => row.scores[b.key] - row.scores[a.key])
-              .slice(0, 3);
+            const topDimensions = [...dimensions].sort((a, b) => row.scores[b.key] - row.scores[a.key]).slice(0, 3);
             return (
               <article className="rank-card" key={row.model.id}>
                 <div className="rank-card-head">
@@ -72,17 +71,20 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
                     <div className="rank-card-bar" key={dimension.key}>
                       <span>{dimension.label}</span>
                       <span className="bar-track">
-                        <span
-                          className="bar-fill"
-                          style={{ width: `${roundScore(row.scores[dimension.key])}%` }}
-                        />
+                        <span className="bar-fill" style={{ width: `${roundScore(row.scores[dimension.key])}%` }} />
                       </span>
                       <span className="mono">{roundScore(row.scores[dimension.key])}</span>
                     </div>
                   ))}
                 </div>
-                <div className="rank-card-meta">
+                <div className="rank-card-meta" style={{ flexWrap: "wrap", gap: 8 }}>
                   <Badge>{row.mode}</Badge>
+                  <Badge>
+                    n={row.samplesCompleted}/{row.samplesRequested}
+                  </Badge>
+                  <Badge>Range {scoreRange(row)}</Badge>
+                  {row.provisionalTie && <Badge>Provisional tie</Badge>}
+                  {row.caveat && <Badge>Route caveat</Badge>}
                 </div>
                 <details className="rank-card-details">
                   <summary>All dimensions</summary>
@@ -100,7 +102,7 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
         </div>
       </div>
       <div className="table-wrap leaderboard-table-wrap">
-        <table className="leaderboard" aria-label="Synthetic model leaderboard">
+        <table className="leaderboard" aria-label="Observed OpenRouter model leaderboard">
           <thead>
             <tr>
               <th scope="col" aria-sort={ariaSort("rank")}>
@@ -108,7 +110,6 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
                   Rank
                 </button>
               </th>
-              <th scope="col">Delta</th>
               <th scope="col" className="left">
                 Model
               </th>
@@ -117,6 +118,7 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
                   Overall
                 </button>
               </th>
+              <th scope="col">Range</th>
               {dimensions.map((dimension) => (
                 <th scope="col" key={dimension.key} title={dimension.label} aria-sort={ariaSort(dimension.key)}>
                   <button className="sort-button" onClick={() => changeSort(dimension.key)}>
@@ -124,6 +126,7 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
                   </button>
                 </th>
               ))}
+              <th scope="col">Samples</th>
               <th scope="col">Mode</th>
             </tr>
           </thead>
@@ -131,9 +134,6 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
             {sorted.map((row) => (
               <tr key={row.model.id}>
                 <td className="mono">{row.rank}</td>
-                <td>
-                  <RankDelta delta={row.delta} />
-                </td>
                 <td className="left">
                   <Link className="model-cell" href={`/models/${row.model.slug}`}>
                     <ModelLogo provider={row.provider} />
@@ -141,12 +141,20 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
                       <span className="model-cell-name">{row.model.name}</span>
                       <span className="model-cell-provider">{row.provider.name}</span>
                     </span>
+                    {row.provisionalTie && <Badge>Provisional tie</Badge>}
+                    {row.caveat && <Badge>Route caveat</Badge>}
                   </Link>
                 </td>
                 <ScoreCell value={row.overall} leader={row.rank === 1} />
+                <td className="mono" title={`Observed sample scores: ${row.sampleScores.join(", ")}`}>
+                  {scoreRange(row)}
+                </td>
                 {dimensions.map((dimension) => (
                   <ScoreCell key={dimension.key} value={row.scores[dimension.key]} />
                 ))}
+                <td className="mono">
+                  {row.samplesCompleted}/{row.samplesRequested}
+                </td>
                 <td>
                   <Badge>{row.mode}</Badge>
                 </td>

@@ -1,0 +1,47 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:55:37.840Z",
+  "completed_at": "2026-07-18T20:59:37.845Z",
+  "requested_model": "anthropic/claude-opus-4.8",
+  "returned_model": null,
+  "provider": null,
+  "router_metadata": null,
+  "generation_id": null,
+  "finish_reason": null,
+  "native_finish_reason": null,
+  "latency_ms": 240003,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0.163518355,
+  "cost_basis": "ambiguous_request_maximum",
+  "usage": null,
+  "generation": null,
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "azure/us-east-2",
+    "provider_name": "Azure",
+    "quantization": "unknown",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 5.004999999999999,
+    "maximum_completion_usd_per_million": 25.025
+  },
+  "request_sha256": "c1939c32fce5d472a6888682cb49a062ed62317df69f25de7413ee9f4d216cce",
+  "error": {
+    "message": "The operation was aborted due to timeout",
+    "status": null,
+    "body": null
+  },
+  "model_config": {
+    "id": "anthropic/claude-opus-4.8",
+    "slug": "claude-opus-4-8",
+    "name": "Claude Opus 4.8",
+    "provider_id": "anthropic"
+  }
+}

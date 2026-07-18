@@ -1,0 +1,100 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T21:05:40.447Z",
+  "completed_at": "2026-07-18T21:10:02.781Z",
+  "requested_model": "z-ai/glm-5.2",
+  "returned_model": "z-ai/glm-5.2",
+  "provider": "StreamLake",
+  "router_metadata": {
+    "requested": "z-ai/glm-5.2",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=1, selected=StreamLake",
+    "attempt": 1,
+    "is_byok": false,
+    "endpoints": {
+      "total": 30,
+      "available": [
+        {
+          "provider": "StreamLake",
+          "model": "z-ai/glm-5.2-20260616",
+          "selected": true
+        }
+      ]
+    }
+  },
+  "generation_id": "gen-1784408762-xYxq1I1LU9koIzoRKecP",
+  "finish_reason": "length",
+  "native_finish_reason": "length",
+  "latency_ms": 171762,
+  "actual_cost_usd": 0.0053982308,
+  "accounted_cost_usd": 0.0053982308,
+  "cost_basis": "openrouter_reported",
+  "usage": {
+    "prompt_tokens": 1435,
+    "completion_tokens": 6144,
+    "total_tokens": 7579,
+    "cost": 0.0053982308,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1130,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0053982308,
+      "upstream_inference_prompt_cost": 0.0001401956,
+      "upstream_inference_completions_cost": 0.0052580352
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 6146,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "generation": {
+    "id": "gen-1784408762-xYxq1I1LU9koIzoRKecP",
+    "model": "z-ai/glm-5.2-20260616",
+    "provider_name": "StreamLake",
+    "native_tokens_prompt": 1435,
+    "native_tokens_completion": 6144,
+    "native_tokens_reasoning": 6146,
+    "num_media_prompt": null,
+    "num_media_completion": 0,
+    "latency": 1524,
+    "generation_time": 149795,
+    "total_cost": 0.00539823,
+    "created_at": "2026-07-18T21:06:02.391Z",
+    "finish_reason": "length"
+  },
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "streamlake/fp8",
+    "provider_name": "StreamLake",
+    "quantization": "fp8",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 0.2739737,
+    "maximum_completion_usd_per_million": 0.8610601999999999
+  },
+  "request_sha256": "2928c1141d45cfe5cd2ae57188b03169ac20be3b0f117ac564aa5405e01314d3",
+  "error": {
+    "message": "Completion finish reason was length, not stop.",
+    "status": null,
+    "body": null
+  },
+  "model_config": {
+    "id": "z-ai/glm-5.2",
+    "slug": "glm-5-2",
+    "name": "GLM 5.2",
+    "provider_id": "zai"
+  }
+}

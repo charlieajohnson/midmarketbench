@@ -1,8 +1,8 @@
 export const benchmark = {
   name: "MidMarketBench",
-  methodologyVersion: "v0.3",
-  releasedAt: "2026-06-21",
+  methodologyVersion: "v0.4-mini",
+  releasedAt: "2026-07-18",
   mode: "Closed-book" as const,
   disclaimer:
-    "All companies and scores are synthetic and illustrative. MidMarketBench evaluates workflow usefulness, not investment opportunities.",
+    "The case is synthetic; model outputs and scores are observed OpenRouter runs. Results are directional, not investment advice or a universal model ranking.",
 };

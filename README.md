@@ -1,70 +1,96 @@
 # MidMarketBench
 
-Frontier model benchmarking for European lower-mid-market investment work.
+Observed frontier-model benchmarking for European lower-mid-market investment work.
 
 [![Live product](https://img.shields.io/badge/live-midmarketbench.vercel.app-6d825f?style=for-the-badge)](https://midmarketbench.vercel.app)
+[![Methodology](https://img.shields.io/badge/method-v0.4--mini-c27c46?style=for-the-badge)](#methodology)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org)
-[![React](https://img.shields.io/badge/React-19.1-149eca?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Synthetic data](https://img.shields.io/badge/data-synthetic-c27c46?style=for-the-badge)](#data-integrity)
 
 ![MidMarketBench overview](docs/assets/readme-hero.svg)
 
-MidMarketBench asks a practical question: can a frontier model turn a messy, sparse, commercially sensitive diligence packet into work an investment team can actually use?
+MidMarketBench asks a practical question: can a frontier model turn a sparse, commercially sensitive diligence packet into work an investment team can use?
 
-The current repo is a public product shell with synthetic cases, synthetic standings, typed seed data, a read-only API, deterministic score aggregation and a clean Supabase boundary for the operational benchmark. It is not yet claiming observed provider performance.
+The 18 July 2026 release is a real, budget-bounded mini benchmark. The company is synthetic; candidate and judge outputs, routing metadata, costs, latency and scores are observed OpenRouter runs.
 
-| Item         | Current state                                                  |
-| ------------ | -------------------------------------------------------------- |
-| Live product | [midmarketbench.vercel.app](https://midmarketbench.vercel.app) |
-| Methodology  | `v0.3`                                                         |
-| Run mode     | closed-book                                                    |
-| Status       | product shell live, evaluation runner pending                  |
+| Item             | Current state                                                  |
+| ---------------- | -------------------------------------------------------------- |
+| Live product     | [midmarketbench.vercel.app](https://midmarketbench.vercel.app) |
+| Methodology      | `v0.4-mini`                                                    |
+| Run mode         | Closed-book                                                    |
+| Case             | Norwyn Controls, created fresh for this run                    |
+| Tasks            | Four                                                           |
+| Samples          | Two per available model                                        |
+| Candidate roster | Nine models requested through OpenRouter                       |
+| Spend control    | USD 7 process guard plus a USD 7.50 OpenRouter key cap         |
 
-## Why It Exists
+## Result Scope
 
-Most AI benchmarks are excellent for general capability and weak for investment workflow usefulness. They rarely test whether a model can:
+This release is directional, not universal. One company, four tasks and two samples can reveal useful workflow behaviour, but cannot establish general intelligence, reliability or value across other domains.
 
-- challenge a management narrative without inventing facts
-- reconcile revenue, retention and concentration data
-- spot the risks that actually change a deal recommendation
-- avoid US-market assumptions when working on European software companies
-- produce memo-ready output with a clear next action
+- Complete two-sample results are ranked.
+- Models within two overall points are marked as provisional ties.
+- Partial and unavailable models remain visible for provenance but are excluded from ranked positions.
+- A provider or endpoint failure is not scored as model incompetence.
+- Results are not investment advice.
 
-MidMarketBench is built for that gap. It treats LLM output as investment work product, not as a parlour trick.
+## Observed Result
 
-## What Is In The Repo
+Eight models completed both samples. Claude Fable 5 was unavailable on its listed OpenRouter routes and is disclosed
+without a score. Settled spend on the dedicated key was USD 5.315590.
 
-| Layer            | What exists today                                                   | Notes                                                                  |
-| ---------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| Public site      | Next.js App Router product shell                                    | Homepage, leaderboard, model pages, cases, methodology and about pages |
-| Benchmark data   | Typed seed data in `data/`                                          | 12-model roster, eight scoring dimensions, one live synthetic case     |
-| Scoring          | Pure TypeScript aggregation in `lib/scoring.ts`                     | Overall is always derived from weighted dimension scores               |
-| API              | Read-only `/api/v1/*` routes                                        | Leaderboard, model roster, cases and health                            |
-| Storage boundary | `BenchmarkRepository` abstraction                                   | Seed data works now; Supabase is scaffolded for pass two               |
-| Integrity checks | Copy, lint, typecheck, unit tests, build and Playwright smoke tests | `npm run check` is the main local gate                                 |
+| Rank | Model            | Overall | Two-sample range | Status          |
+| ---: | ---------------- | ------: | ---------------: | --------------- |
+|    1 | Kimi K3          |   96.28 |      95.64–96.91 | Provisional tie |
+|    2 | Grok 4.5         |   96.27 |      95.54–96.99 | Provisional tie |
+|    3 | GPT-5.6 Sol      |   95.50 |      95.11–95.89 | Provisional tie |
+|    4 | Gemini 3.5 Flash |   89.07 |      86.88–91.26 | Provisional tie |
+|    5 | Claude Opus 4.8  |   88.76 |      80.15–97.37 | Provisional tie |
+|    6 | DeepSeek V4 Pro  |   88.63 |      87.87–89.39 | Provisional tie |
+|    7 | GLM 5.2          |   88.15 |      86.62–89.68 | Provisional tie |
+|    8 | Qwen3.7 Max      |   65.50 |      44.58–86.42 | Complete        |
 
-## Product Snapshot
+Kimi K3 has the highest point estimate by 0.01, not a decisive lead. Under the published two-point rule, Kimi, Grok
+and GPT are a provisional top group.
 
-The public app currently presents a synthetic benchmark board for a configured model roster including GPT-5.5, Claude Opus 4.8, Gemini 3.5 Flash, GPT-5.4, Claude Opus 4.7, Gemini 3.1 Pro, Grok 4.20, GLM-5.2, Qwen3.7 Max, Seed 2.0 Pro, DeepSeek V4 Pro and GPT-5.2 Pro.
+## Candidate Roster
 
-The standing board is deliberately labelled synthetic. The useful artefacts in this pass are the product surface, case design, data contracts, scoring shape and repository boundary.
+The point-in-time roster was checked against the OpenRouter catalogue and endpoint API on 18 July 2026.
 
-| Rank | Model            | Provider  | Synthetic overall | Strongest signal in the demo                    |
-| ---: | ---------------- | --------- | ----------------: | ----------------------------------------------- |
-|    1 | GPT-5.5          | OpenAI    |              83.9 | Grounding, risk discovery and output usefulness |
-|    2 | Claude Opus 4.8  | Anthropic |              82.8 | Scepticism and numerical sanity                 |
-|    3 | Gemini 3.5 Flash | Google    |              79.5 | Numerical sanity and grounding                  |
-|    4 | GPT-5.4          | OpenAI    |              78.4 | Grounding and output usefulness                 |
-|    5 | Claude Opus 4.7  | Anthropic |              76.9 | Grounding and numerical sanity                  |
+| Model            | OpenRouter model ID         |
+| ---------------- | --------------------------- |
+| Claude Fable 5   | `anthropic/claude-fable-5`  |
+| GPT-5.6 Sol      | `openai/gpt-5.6-sol`        |
+| Kimi K3          | `moonshotai/kimi-k3`        |
+| Claude Opus 4.8  | `anthropic/claude-opus-4.8` |
+| Grok 4.5         | `x-ai/grok-4.5`             |
+| Gemini 3.5 Flash | `google/gemini-3.5-flash`   |
+| GLM 5.2          | `z-ai/glm-5.2`              |
+| Qwen3.7 Max      | `qwen/qwen3.7-max`          |
+| DeepSeek V4 Pro  | `deepseek/deepseek-v4-pro`  |
 
-Full model metadata lives in [`data/models.ts`](data/models.ts). Roster provenance is tracked in [`notes/model-roster.md`](notes/model-roster.md).
+Three blinded judges are configured: GPT-5.6 Terra, Claude Sonnet 5 and Gemini 3.1 Pro Preview. A judge from the same provider family as the candidate is excluded from that candidate's score.
 
-## Scoring Model
+Kimi K3 is qualified precisely: the dated result is Moonshot AI's OpenRouter route using the available INT4 endpoint and mandatory maximum reasoning. It is not presented as a full-precision or downloadable-weights result. See [`notes/model-roster.md`](notes/model-roster.md).
+
+## Case And Tasks
+
+Norwyn Controls is a synthetic UK, DACH and Benelux quality and maintenance workflow software company. The packet contains management claims, an ARR bridge, expansion composition, retention, revenue and margin data, EBITDA and cash adjustments, concentration, implementation performance, channel evidence, TAM construction, process constraints and an untrusted instruction embedded in source material.
+
+Every candidate receives the same closed-book packet and four tasks:
+
+1. Reconstruct eleven operating, retention, margin and market metrics with formulae and exact evidence IDs.
+2. Return six ranked, company-specific red flags linked to management claims, evidence and diligence actions.
+3. Select exactly four diligence actions within EUR 25k and eight parallel working days.
+4. Write an IC decision note on whether to authorise EUR 250k of confirmatory diligence.
+
+No web access, tools or follow-up questions are available to candidates in this release.
+
+## Methodology
 
 ![Scoring weights](docs/assets/scoring-weights.svg)
 
-Overall is calculated from eight dimension scores. It is never stored directly in TypeScript or SQL.
+Overall is derived from eight dimension scores:
 
 ```text
 overall =
@@ -78,162 +104,138 @@ overall =
   output usefulness      * 0.05
 ```
 
-Commercial judgement carries the most weight because a grounded but commercially naive answer should not win an investment benchmark.
+Commercial judgement carries the most weight because a grounded but commercially naive response should not win an investment-work benchmark.
 
-| Dimension            | Weight | What a high score means                                               |
-| -------------------- | -----: | --------------------------------------------------------------------- |
-| Commercial judgement |    20% | Prioritises revenue quality, durability and decision impact           |
-| Grounding            |    15% | Supports claims with packet evidence or marks inference clearly       |
-| Scepticism           |    15% | Challenges weak claims, inflated metrics and convenient narratives    |
-| Numerical sanity     |    15% | Reconciles financial and operating data correctly                     |
-| Risk discovery       |    15% | Finds hidden and second-order risks across the packet                 |
-| Question generation  |    10% | Asks specific questions likely to change the recommendation           |
-| European context     |     5% | Accounts for fragmented markets, regulation, language and procurement |
-| Output usefulness    |     5% | Produces material a deal team can reuse with limited editing          |
+| Dimension            | Weight | Main evidence                                             |
+| -------------------- | -----: | --------------------------------------------------------- |
+| Commercial judgement |    20% | Risk ordering, action utility and judge grade             |
+| Grounding            |    15% | Metric citations, risk evidence precision and judge grade |
+| Scepticism           |    15% | Issue coverage and judge grade                            |
+| Numerical sanity     |    15% | Reference values, units and formula protocol              |
+| Risk discovery       |    15% | Weighted issue coverage and ranked gain                   |
+| Question generation  |    10% | Risk-to-action linkage and action utility                 |
+| European context     |     5% | DACH and reachable-TAM coverage plus judge grade          |
+| Output usefulness    |     5% | Compliance, action constraints and judge grade            |
 
-## Case Library
+### Deterministic scoring
 
-The live case is **Veritalis Compliance Cloud**, a synthetic DACH, UK and Benelux compliance workflow SaaS company.
+- Eleven metric answers are checked for value tolerance, exact evidence and calculation protocol.
+- Ranked risks are matched to a weighted issue reference and scored for coverage, ordering, evidence precision and action linkage.
+- Diligence actions are checked against catalogue costs and durations, the overall budget and time constraint, ordering and decision utility.
+- Provider-compatible JSON is validated locally.
+- Task completeness and instruction-injection resistance form a separate scored compliance component.
 
-| Field         | Value            |
-| ------------- | ---------------- |
-| Stage         | Lower mid-market |
-| Sector        | B2B Software     |
-| ARR           | EUR 18.4m        |
-| Growth        | 24%              |
-| EBITDA margin | 12%              |
-| Ownership     | Founder-owned    |
-| Difficulty    | Medium           |
+### Blinded calibrated judging
 
-The case packet includes company narrative, ARR bridge, retention cohorts, customer concentration, management Q&A, five tasks and a gated answer key. Pipeline cases cover healthcare workforce management, cybersecurity compliance, industrial field service and legal document automation.
+Judges see the packet, strong and weak anchor notes, and the candidate IC note. Model identity, price and latency are hidden. They grade grounding, commercial judgement, scepticism, European context and output usefulness from 0 to 4:
+
+| Grade | Meaning                                                             |
+| ----: | ------------------------------------------------------------------- |
+|     4 | Exceptional: exact, decision-changing and unusually well calibrated |
+|     3 | Strong: grounded and useful with limited omissions                  |
+|     2 | Acceptable: broadly sound but generic or incomplete                 |
+|     1 | Weak: insufficient evidence or decision relevance                   |
+|     0 | Miss: contradicts evidence or produces unusable work                |
+
+A judge must separate the strong and weak anchors in every dimension. Invalid judgements are rejected. Each candidate grade is normalised between that judge's weak anchor at 0 and strong anchor at 100. Same-family judgements are excluded, then a three-judge median or two-judge mean is used. Material disagreement is recorded.
+
+### Reasoning and routing
+
+- Candidates receive a 2,048-token reasoning budget where the provider allows it.
+- Judges receive a 1,024-token reasoning budget.
+- Kimi K3 uses its provider-mandated maximum reasoning level.
+- Eligible endpoints must support `max_tokens`, `reasoning`, `response_format` and `structured_outputs`.
+- The runner pins the selected endpoint, disables fallback and records requested and returned model metadata.
+
+These settings improve comparability but do not make every provider implementation identical. Exceptions are kept in the result provenance.
+
+Two candidate response-format variants are frozen in the run manifest. Ten accepted samples used bounded numeric and rank keywords; six used a provider-compatible schema after some endpoints rejected those keywords. Both variants require the same fields. Removed bounds are checked as scored protocol constraints rather than infrastructure failures. One provider-compatible Opus sample returned a fifth action and was materially penalised rather than discarded, so schema adaptation remains a comparability limit. Per-sample response-format hashes preserve the distinction.
 
 ## Evaluation Flow
 
 ![Evaluation flow](docs/assets/evaluation-loop.svg)
 
-The operational benchmark should move from a public shell to persisted run artefacts:
-
 ```text
-synthetic packet
+fresh synthetic packet
       |
       v
-standard prompt + run mode
+versioned prompt + closed-book protocol
       |
       v
-model output from GPT-5.5, Claude Opus 4.8, Gemini 3.5 Flash, ...
+two observed OpenRouter samples per candidate
       |
       v
-deterministic checks: schema, arithmetic, answer-key coverage
+provider schema + local validation
       |
       v
-blind LLM judge + human calibration
+deterministic reference scoring + blinded cross-family judges
       |
       v
-versioned scorecard with cost, latency and raw output
+immutable artefacts + public observed result
 ```
 
-The important design choice is traceability. A future score should point back to the exact model, prompt hash, parameters, packet version, raw output, evaluator version, token cost and latency.
+Each artefact records the request hash, case and prompt provenance, routed endpoint, returned provider and model metadata, token use, cost, latency, finish reason and output. The runner keeps billable failures and ambiguous timeouts in the spend ledger rather than silently discarding them.
+
+### Run qualifications
+
+- Candidate prompts explicitly treated the packet as untrusted and the scorer detects both embedded directives.
+- The v0.4 judge system instruction did not separately restate that untrusted-data boundary. No accepted judgement followed the embedded instruction; the boundary should be hardened in a new protocol version rather than mixed into this dated panel.
+- Some early length failures retain cost, usage and error metadata but not raw response text. Accepted generations and later failures remain traceable.
+- The local USD 7 ledger is process-scoped. The dedicated key's USD 7.50 cap is the authoritative cross-process control.
 
 ## Architecture
 
 ```text
-app/* routes and pages
-        |
-        v
-components/* presentation
-        |
-        v
-lib/repo/BenchmarkRepository
-   |                         |
-   v                         v
-SeedRepository          SupabaseRepository
-data/* today            pass two boundary
-   |
-   v
-lib/scoring.ts
-derived rankings and API responses
+benchmark/mini-v0.4/*        versioned case, anchors and run config
+scripts/run-openrouter-*     preflight, execution, ledger and artefacts
+scripts/benchmark/*          prompts, schemas and scoring
+data/observed-results.json   reviewed public aggregate
+lib/repo/*                   presentation boundary
+app/* and components/*       pages and read-only API
 ```
 
-```mermaid
-flowchart LR
-    Browser["Browser"] --> Pages["Next.js App Router"]
-    Pages --> Repo["BenchmarkRepository"]
-    Repo --> Seed["SeedRepository: data/*"]
-    Repo -. pass two .-> Supabase["SupabaseRepository"]
-    Seed --> Scoring["Pure scoring functions"]
-    Scoring --> API["Read-only API routes"]
-    API --> Browser
-```
+The public app remains statically backed. A database is unnecessary for a single dated release; Supabase remains a future boundary for a multi-case service. The decision record is in [`notes/architecture.md`](notes/architecture.md).
 
-Key technical choices:
+## Run The Benchmark
 
-- Next.js 15 App Router and React 19
-- strict TypeScript with `noUncheckedIndexedAccess`
-- Tailwind 4 tokens plus small local component CSS
-- Server Components by default
-- client JavaScript limited to sorting, charts, theme and banner dismissal
-- repository boundary for seed data now and Supabase later
-- deterministic score aggregation with stable tie-breaks
-
-The compressed decision record is in [`notes/architecture.md`](notes/architecture.md).
-
-## Public API
-
-All API routes are read-only in pass one.
-
-| Route                     | Purpose                                       |
-| ------------------------- | --------------------------------------------- |
-| `GET /api/v1/health`      | Service and methodology status                |
-| `GET /api/v1/leaderboard` | Ranked synthetic results with derived Overall |
-| `GET /api/v1/models`      | Current model roster metadata                 |
-| `GET /api/v1/cases`       | Public synthetic cases                        |
-| `GET /api/v1/cases/:slug` | One public case and packet manifest           |
-
-Example:
-
-```bash
-curl https://midmarketbench.vercel.app/api/v1/leaderboard
-```
-
-```bash
-curl https://midmarketbench.vercel.app/api/v1/cases/compliance-workflow-saas
-```
-
-## Repository Map
-
-```text
-app/          routes, metadata, API handlers and page composition
-components/   product UI components
-data/         typed synthetic benchmark data
-lib/          scoring, formatting, types, repository boundary and Supabase clients
-notes/        architecture and model-roster provenance
-public/       static visual assets
-scripts/      local quality checks
-supabase/     pass-two schema and seed handover
-tests/        Playwright smoke coverage
-```
-
-## Run Locally
-
-Requirements: Node.js 20 or later and npm 10 or later.
-
-```bash
-cp .env.example .env.local
-```
+Requirements: Node.js 20 or later, npm 10 or later, and an OpenRouter API key with a deliberate provider-side spend limit. The in-process ledger is a guard, not a cross-process lock.
 
 ```bash
 npm install
 ```
 
+Preflight is read-only and snapshots the current model catalogue and endpoint options:
+
 ```bash
+node scripts/run-openrouter-benchmark.mjs --stage=preflight
+```
+
+Run stages with the key supplied only through the process environment:
+
+```bash
+OPENROUTER_API_KEY="..." node scripts/run-openrouter-benchmark.mjs --stage=candidates
+```
+
+```bash
+OPENROUTER_API_KEY="..." node scripts/run-openrouter-benchmark.mjs --stage=judges
+```
+
+```bash
+node scripts/run-openrouter-benchmark.mjs --stage=score
+```
+
+Set `BENCHMARK_RUN_ID` to create or resume a named immutable run. Never commit a key, `.env` file or credential export.
+
+## Run The Site
+
+```bash
+npm install
 npm run dev
 ```
 
 Open [localhost:3000](http://localhost:3000).
 
-## Verify
-
-Use the full local gate before shipping code changes:
+Use the full local gate before shipping:
 
 ```bash
 npm run check
@@ -243,53 +245,42 @@ Optional browser smoke tests:
 
 ```bash
 npx playwright install chromium
-```
-
-```bash
 npm run test:e2e
 ```
 
-Copy checks intentionally reject em dashes and italic markup in product copy.
+Copy checks reject em dashes and italic markup in product copy.
 
-## Supabase Handover
+## Public API
 
-Supabase is present as an explicit pass-two boundary, not as a hidden production dependency.
+| Route                     | Purpose                                    |
+| ------------------------- | ------------------------------------------ |
+| `GET /api/v1/health`      | Service and methodology status             |
+| `GET /api/v1/leaderboard` | Ranked observed results and run provenance |
+| `GET /api/v1/models`      | Current model roster metadata              |
+| `GET /api/v1/cases`       | Public synthetic case metadata             |
+| `GET /api/v1/cases/:slug` | One public case and packet manifest        |
 
-1. Run `supabase/migrations/0001_init.sql`.
-2. Run `supabase/seed.sql`.
-3. Generate database types into `lib/supabase/types.ts`.
-4. Implement typed query mappings in `SupabaseRepository`.
-5. Set `USE_SUPABASE=true`.
-6. Provide the public URL and anonymous key.
-
-RLS exposes public display records as read-only. Evaluation writes require a private service role and must stay outside the browser client.
+```bash
+curl https://midmarketbench.vercel.app/api/v1/leaderboard
+```
 
 ## Data Integrity
 
-- All company and deal data are synthetic.
-- Current scores, ranks, rank changes, release months and unspecified technical metadata are illustrative.
-- Public cases are meant to explain the method. Private holdouts should never be committed to this repository.
-- Model names are tracked in [`data/models.ts`](data/models.ts), with provenance notes in [`notes/model-roster.md`](notes/model-roster.md).
+- Norwyn Controls and all company information are synthetic.
+- Candidate and judge outputs, costs, latency and scores are observed, not illustrative.
+- Public aggregates must remain traceable to immutable run artefacts and model snapshots.
+- Failed, partial and unavailable runs are labelled and excluded from ranked positions.
+- Models less than two overall points apart are provisional ties.
+- The result is directional and evaluates this private-market workflow only.
 - The benchmark evaluates workflow usefulness, not investment opportunities.
-
-## Roadmap
-
-| Slice      | Outcome                                                                                            |
-| ---------- | -------------------------------------------------------------------------------------------------- |
-| Runner     | Provider-agnostic execution with model, prompt hash, parameters, raw output, token use and latency |
-| Scoring    | Deterministic checks, blind judge scoring, human calibration and agreement reporting               |
-| Storage    | Typed Supabase mappings, migrations, RLS and persisted run artefacts                               |
-| Cases      | Five public cases plus private holdouts                                                            |
-| Operations | CI, branch protection, monitoring, custom domain and real contact address                          |
-| Results    | Replace synthetic standings only after run artefacts are persisted and reviewable                  |
 
 ## Non-Goals
 
 - Not a general intelligence leaderboard.
 - Not investment advice.
-- Not a claim that the synthetic standings reflect observed model performance.
-- Not a place to store proprietary deal material or private holdouts.
+- Not evidence that one case predicts performance across sectors, geographies or workflows.
+- Not a place to store proprietary deal material or API credentials.
 
 ## Licence
 
-No licence file is present yet. Treat the repository as all rights reserved unless Charlie adds one.
+No licence file is present. Treat the repository as all rights reserved unless one is added.

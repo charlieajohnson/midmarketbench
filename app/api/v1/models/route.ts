@@ -3,5 +3,7 @@ import { getRepository } from "@/lib/repo";
 
 export const dynamic = "force-static";
 export async function GET() {
-  return NextResponse.json({ models: await getRepository().getModels() });
+  const repository = getRepository();
+  const [run, models] = await Promise.all([repository.getRunSummary(), repository.getModelResults()]);
+  return NextResponse.json({ dataStatus: run.dataStatus, run, models });
 }

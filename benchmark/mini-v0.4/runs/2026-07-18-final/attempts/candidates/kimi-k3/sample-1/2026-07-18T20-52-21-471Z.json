@@ -1,0 +1,95 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:52:21.471Z",
+  "completed_at": "2026-07-18T20:59:26.213Z",
+  "requested_model": "moonshotai/kimi-k3",
+  "returned_model": "moonshotai/kimi-k3",
+  "provider": "Moonshot AI",
+  "router_metadata": {
+    "requested": "moonshotai/kimi-k3",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=1, selected=Moonshot AI",
+    "attempt": 1,
+    "is_byok": false,
+    "endpoints": {
+      "total": 1,
+      "available": [
+        {
+          "provider": "Moonshot AI",
+          "model": "moonshotai/kimi-k3-20260715",
+          "selected": true
+        }
+      ]
+    }
+  },
+  "generation_id": "gen-1784408040-BBNGbrzxMswZz4pxihSE",
+  "finish_reason": "stop",
+  "native_finish_reason": "stop",
+  "latency_ms": 331720,
+  "actual_cost_usd": 0.1362318,
+  "accounted_cost_usd": 0.1362318,
+  "cost_basis": "openrouter_reported",
+  "usage": {
+    "prompt_tokens": 2218,
+    "completion_tokens": 8915,
+    "total_tokens": 11133,
+    "cost": 0.1362318,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1536,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.1362318,
+      "upstream_inference_prompt_cost": 0.0025068,
+      "upstream_inference_completions_cost": 0.133725
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 4816,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "generation": {
+    "error": "The operation was aborted due to timeout"
+  },
+  "transport_retries": [
+    {
+      "attempt": 1,
+      "status": 429,
+      "message": "Provider returned error",
+      "delay_ms": 1000
+    }
+  ],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "moonshotai/int4",
+    "provider_name": "Moonshot AI",
+    "quantization": "int4",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 3.0029999999999997,
+    "maximum_completion_usd_per_million": 15.014999999999999
+  },
+  "request_sha256": "747bf8a3b6128d7d745ca88dd6a709f6102bbad6e8f3302aa79ec415903ec159",
+  "error": {
+    "message": "Local schema validation failed: metrics.2.evidence_ids.2: Unknown packet ID.; metrics.9.evidence_ids.2: Unknown packet ID.; metrics.10.evidence_ids.1: Unknown packet ID.; risks.2.evidence_ids.3: Unknown packet ID.; risks.5.evidence_ids.1: Unknown packet ID.; ic_note.thesis_breakers.0.evidence_ids.0: Unknown packet ID.; ic_note.thesis_breakers.1.evidence_ids.0: Unknown packet ID.; ic_note.thesis_breakers.2.evidence_ids.0: Unknown packet ID.",
+    "status": null,
+    "body": null
+  },
+  "model_config": {
+    "id": "moonshotai/kimi-k3",
+    "slug": "kimi-k3",
+    "name": "Kimi K3",
+    "provider_id": "moonshot"
+  }
+}

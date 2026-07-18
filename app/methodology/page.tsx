@@ -9,15 +9,11 @@ export const metadata: Metadata = {
 };
 
 const rubric = [
-  [
-    "5",
-    "Excellent",
-    "Identifies the issue, supports it, explains decision impact and proposes the right diligence action.",
-  ],
-  ["4", "Good", "Identifies and explains the issue but misses some nuance or evidence."],
-  ["3", "Acceptable", "Partially identifies the issue but treats it generically or weakly prioritises it."],
-  ["2", "Weak", "Gestures at the issue without understanding its commercial significance."],
-  ["1", "Poor", "Misses the issue or reaches the opposite conclusion."],
+  ["4", "Exceptional", "Exact, decision-changing and unusually well calibrated to the evidence and task."],
+  ["3", "Strong", "Grounded, commercially useful and clear, with only limited omissions."],
+  ["2", "Acceptable", "Broadly sound but generic, incomplete or weakly prioritised."],
+  ["1", "Weak", "Touches the issue without enough evidence or decision relevance."],
+  ["0", "Miss", "Misses or contradicts the evidence, or produces unusable work."],
 ];
 
 export default async function MethodologyPage() {
@@ -25,9 +21,9 @@ export default async function MethodologyPage() {
   return (
     <div className="shell page">
       <PageHeader
-        eyebrow="Methodology v0.3"
+        eyebrow="Methodology v0.4-mini"
         title="Judgement carries the most weight."
-        lede="MidMarketBench tests applied investment judgement against realistic synthetic diligence packets. Overall is derived from eight dimension scores, never stored directly."
+        lede="The 18 July 2026 mini benchmark scores observed OpenRouter outputs from a fresh synthetic diligence packet. Overall is derived from eight dimensions and two samples per available model."
       />
       <section className="section">
         <h2 className="section-title">Dimensions and weights</h2>
@@ -66,8 +62,12 @@ export default async function MethodologyPage() {
       <section className="section grid-2">
         <div>
           <p className="eyebrow">Scoring reference</p>
-          <h2 className="section-title">Five-point rubric</h2>
-          <p className="lede">Dimension judgements map to a common anchored scale before aggregation.</p>
+          <h2 className="section-title">Anchored 0 to 4 rubric</h2>
+          <p className="lede">
+            Blinded judges grade five subjective dimensions against the same strong and weak reference notes. Each grade
+            is normalised per judge and dimension with the weak anchor at 0 and strong anchor at 100 before panel
+            aggregation.
+          </p>
         </div>
         <div className="card card-pad">
           <table className="method-table">
@@ -84,19 +84,22 @@ export default async function MethodologyPage() {
         </div>
       </section>
       <section className="section">
-        <p className="eyebrow">Run protocol</p>
-        <h2 className="section-title">Closed-book first.</h2>
+        <p className="eyebrow">Observed run protocol</p>
+        <h2 className="section-title">Four tasks, one fresh packet.</h2>
         <div className="grid-2" style={{ marginTop: 24 }}>
           {[
-            ["Closed-book", "Packet only. Default for v0.3 and the cleanest test of synthesis and judgement."],
             [
-              "Web-enabled",
-              "Public research allowed. Tests source selection, market mapping and competitive discovery.",
+              "Metric reconstruction",
+              "Calculate eleven operating, retention, margin and market metrics with formulae and exact evidence IDs.",
             ],
-            ["Agentic", "File inspection, search and calculation tools enabled. Tests end-to-end workflow execution."],
             [
-              "Human-in-the-loop",
-              "The model may request missing evidence. Tests diligence process quality and question prioritisation.",
+              "Ranked red flags",
+              "Return six company-specific risks, challenged claims, supporting evidence and linked diligence actions.",
+            ],
+            ["Bounded diligence", "Select exactly four actions within EUR 25k and eight parallel working days."],
+            [
+              "IC decision note",
+              "Make the EUR 250k diligence decision, identify thesis breakers and state decision-changing conditions.",
             ],
           ].map(([title, copy]) => (
             <article className="card card-pad" key={title}>
@@ -111,18 +114,75 @@ export default async function MethodologyPage() {
           <p className="eyebrow">Scoring operation</p>
           <h2 className="section-title">Hybrid, traceable evaluation.</h2>
           <p className="lede">
-            Deterministic checks should cover arithmetic, schema validity and answer-key issue coverage. Blind model
-            judging covers subjective dimensions, calibrated against human investment professionals.
+            Deterministic checks score arithmetic, citations, issue coverage, risk ordering, action linkage, budget
+            feasibility and schema compliance. Blinded judges score only the IC note for grounding, commercial
+            judgement, scepticism, European context and output usefulness.
           </p>
         </article>
         <article>
-          <p className="eyebrow">Public and private</p>
-          <h2 className="section-title">Cases in public. Holdouts in reserve.</h2>
+          <p className="eyebrow">Judge controls</p>
+          <h2 className="section-title">Calibrated and cross-family.</h2>
           <p className="lede">
-            Public cases explain the method. Private variants reduce overfitting and should never be shipped to the
-            browser or public repository.
+            Each judge also grades strong and weak anchors. Any dimension without separation is rejected. A judge from
+            the same provider family as the candidate is excluded, then a three-judge median or two-judge mean is used.
+            Material disagreement is recorded for review.
           </p>
         </article>
+      </section>
+      <section className="section grid-2">
+        <article>
+          <p className="eyebrow">Execution controls</p>
+          <h2 className="section-title">Schema support is checked twice.</h2>
+          <p className="lede">
+            Routes must support the requested reasoning, maximum-token and structured-output parameters. Returned JSON
+            is then validated locally. The run records two frozen response-format hashes: a bounded schema and a
+            provider-compatible variant. Removed bounds are checked as scored protocol constraints. Response
+            completeness and instruction-injection resistance also contribute to compliance, with injection-following
+            outputs capped at 25 overall. One provider-compatible Opus sample returned a fifth action and was penalised
+            rather than discarded, so schema adaptation remains a comparability limit.
+          </p>
+        </article>
+        <article>
+          <p className="eyebrow">Reasoning policy</p>
+          <h2 className="section-title">Bounded where providers allow it.</h2>
+          <p className="lede">
+            Candidates receive a 2,048-token reasoning budget and judges receive 1,024. Kimi K3 requires maximum
+            reasoning, so that exception is explicit in its provenance rather than presented as an identical setting.
+          </p>
+        </article>
+      </section>
+      <section className="section grid-2">
+        <article>
+          <p className="eyebrow">Routing and spend</p>
+          <h2 className="section-title">Pinned, inspectable runs.</h2>
+          <p className="lede">
+            The runner snapshots OpenRouter&apos;s model catalogue and eligible endpoints, disables fallback on selected
+            routes, records returned provider metadata and maintains a conservative in-process spend guard. The
+            provider-side key cap is the authoritative cross-process limit.
+          </p>
+        </article>
+        <article>
+          <p className="eyebrow">Ranking policy</p>
+          <h2 className="section-title">Complete evidence only.</h2>
+          <p className="lede">
+            The leaderboard averages two scored samples. A gap below two overall points is marked as a provisional tie.
+            Partial or unavailable models remain visible for provenance but are excluded from ranked positions.
+          </p>
+        </article>
+      </section>
+      <section className="section card card-pad">
+        <p className="eyebrow">Scope limit</p>
+        <h2 className="section-title">Directional, not universal.</h2>
+        <p className="lede">
+          One synthetic company, four tasks and two samples reveal behaviour on this workflow. They do not establish a
+          universal ranking of model intelligence, reliability or value across other domains.
+        </p>
+        <p className="fine" style={{ marginTop: 16 }}>
+          Run qualification: the candidate boundary explicitly treated packet text as untrusted. The v0.4 judge system
+          instruction did not restate that boundary, although no accepted judgement followed the embedded instruction.
+          Some early length failures retain cost and error metadata but not raw response text. Both controls are
+          hardened for subsequent runs without mixing protocols into this dated result.
+        </p>
       </section>
     </div>
   );

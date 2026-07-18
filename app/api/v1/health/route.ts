@@ -1,13 +1,16 @@
 import { NextResponse } from "next/server";
-import { benchmark } from "@/data/benchmark";
+import { getRepository } from "@/lib/repo";
 
 export const dynamic = "force-static";
 
 export async function GET() {
+  const run = await getRepository().getRunSummary();
   return NextResponse.json({
     status: "ok",
     service: "midmarketbench",
-    methodology: benchmark.methodologyVersion,
-    dataSource: "seed",
+    methodology: run.methodologyVersion,
+    dataStatus: run.dataStatus,
+    dataSource: run.dataSource,
+    runId: run.runId,
   });
 }

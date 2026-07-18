@@ -1,0 +1,72 @@
+{
+  "kind": "candidate-1",
+  "status": "failed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "started_at": "2026-07-18T20:41:53.863Z",
+  "completed_at": "2026-07-18T20:44:24.422Z",
+  "requested_model": "google/gemini-3.5-flash",
+  "returned_model": null,
+  "provider": null,
+  "router_metadata": {
+    "requested": "google/gemini-3.5-flash",
+    "strategy": "direct",
+    "region": "ATL",
+    "summary": "available=2",
+    "attempt": 0,
+    "is_byok": false,
+    "endpoints": {
+      "total": 2,
+      "available": [
+        {
+          "provider": "Google",
+          "model": "google/gemini-3.5-flash-20260519",
+          "selected": false
+        },
+        {
+          "provider": "Google AI Studio",
+          "model": "google/gemini-3.5-flash-20260519",
+          "selected": false
+        }
+      ]
+    }
+  },
+  "generation_id": null,
+  "finish_reason": null,
+  "native_finish_reason": null,
+  "latency_ms": 150554,
+  "actual_cost_usd": null,
+  "accounted_cost_usd": 0,
+  "cost_basis": "not_charged",
+  "usage": null,
+  "generation": null,
+  "transport_retries": [],
+  "route_plan": {
+    "basis": "cheapest_eligible_endpoint",
+    "endpoint_tag": "google-vertex/global/flex",
+    "provider_name": "Google",
+    "quantization": "unknown",
+    "required_parameters": [
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "structured_outputs"
+    ],
+    "maximum_prompt_usd_per_million": 0.75,
+    "maximum_completion_usd_per_million": 4.5
+  },
+  "request_sha256": "8c6441bd2bedec9bb9cf3b6dcfc0ff294fd17bc4033cf071cb0f7fc4a444aa23",
+  "error": {
+    "message": "No endpoints found that satisfy the max price for this request",
+    "status": 404,
+    "body": {
+      "message": "No endpoints found that satisfy the max price for this request",
+      "code": 404
+    }
+  },
+  "model_config": {
+    "id": "google/gemini-3.5-flash",
+    "slug": "gemini-3-5-flash",
+    "name": "Gemini 3.5 Flash",
+    "provider_id": "google"
+  }
+}

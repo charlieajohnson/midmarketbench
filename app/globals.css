@@ -935,6 +935,19 @@ button {
   margin-bottom: 10px;
 }
 
+.case-file-content {
+  overflow-x: auto;
+  margin: 14px 0 0;
+  padding: 16px;
+  border: 1px solid var(--hairline);
+  background: color-mix(in srgb, var(--surface) 74%, var(--canvas));
+  color: var(--ink-soft);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
 .task-card,
 .case-card {
   display: flex;

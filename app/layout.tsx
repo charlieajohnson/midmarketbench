@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "MidMarketBench", template: "%s | MidMarketBench" },
-  description: "A synthetic benchmark for European lower-mid-market B2B software investment workflows.",
+  description: "Observed frontier-model benchmarking for European lower-mid-market B2B software investment workflows.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },

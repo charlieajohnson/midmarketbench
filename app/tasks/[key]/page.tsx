@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/components/common/Badge";
 import { SyntheticBanner } from "@/components/common/SyntheticBanner";
 import { SampleOutput } from "@/components/task/SampleOutput";
-import { systemPrompt } from "@/data/cases/compliance-workflow-saas/tasks";
+import { systemPrompt as legacySystemPrompt } from "@/data/cases/compliance-workflow-saas/tasks";
+import { norwynSystemPrompt, norwynTaskKeys } from "@/data/cases/norwyn-controls/tasks";
 import { getRepository } from "@/lib/repo";
 
 export async function generateStaticParams() {
@@ -16,10 +17,13 @@ export async function generateMetadata({ params }: { params: Promise<{ key: stri
 
 export default async function TaskDetailPage({ params }: { params: Promise<{ key: string }> }) {
   const key = (await params).key;
+  const isObservedTask = norwynTaskKeys.has(key);
+  const caseSlug = isObservedTask ? "norwyn-controls" : "compliance-workflow-saas";
+  const systemPrompt = isObservedTask ? norwynSystemPrompt : legacySystemPrompt;
   const repo = getRepository();
   const [task, samples, models] = await Promise.all([
     repo.getTask(key),
-    repo.getSamplesForTask(key, "compliance-workflow-saas"),
+    repo.getSamplesForTask(key, caseSlug),
     repo.getModels(),
   ]);
   if (!task) notFound();
@@ -77,7 +81,9 @@ export default async function TaskDetailPage({ params }: { params: Promise<{ key
           <p className="lede" style={{ marginTop: 0 }}>
             {samples.length
               ? "Representative strong and weak examples are available below."
-              : "The route and rubric are live. Model-specific sample outputs remain intentionally unpopulated until run artefacts exist."}
+              : isObservedTask
+                ? "Observed outputs are retained with request and score provenance in the dated benchmark run artefacts. This page documents the public task contract."
+                : "This legacy task was not used for the observed 18 July 2026 run."}
           </p>
         </article>
       </section>

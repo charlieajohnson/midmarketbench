@@ -1,0 +1,30 @@
+{
+  "strong": {
+    "recommendation": "HOLD",
+    "confidence": 78,
+    "memo": "Do not authorise the full confirmatory budget until the data-definition and cash-quality gates clear. Reported ARR includes EUR 1.30m not live or invoiced, while the bridge implies 105.8% NRR rather than management's 121% [D02][D08]. Expansion quality is concentrated in CPI and one acquired-site roll-in, and Customer A both represents 12.4% of ARR and retenders in nine months [D03][D07]. Reported EBITDA also depends on EUR 2.10m of capitalised development and EUR 1.40m of excluded onboarding payroll; cash from operations does not cover capitalised development [D06]. The product may still own a useful regulated workflow, but the DACH proof is reseller-led and implementation is slower and more service-heavy than presented [D05][D08][D09]. Run A01, A02, A03 and A04 first. Proceed only if deployed and invoiced ARR reconciles, Customer A renewal risk is containable, and normalised cash economics support the valuation discussion.",
+    "thesis_breakers": [
+      { "title": "ARR definition does not reconcile", "evidence_ids": ["D02", "D08"] },
+      { "title": "Cash earnings are materially below adjusted EBITDA", "evidence_ids": ["D06"] },
+      { "title": "Concentrated expansion and renewal risk", "evidence_ids": ["D03", "D07"] }
+    ],
+    "conditions": [
+      "Reconcile contracted, deployed and invoiced ARR",
+      "Validate Customer A renewal",
+      "Restate EBITDA after capitalised development and excluded payroll"
+    ],
+    "dissenting_interpretation": "A buyer could accept temporary delivery intensity if the customer export proves high retention after go-live and the workflow has genuine switching costs."
+  },
+  "weak": {
+    "recommendation": "PROCEED_CONDITIONALLY",
+    "confidence": 92,
+    "memo": "Norwyn is an attractive European software leader with 121% NRR, 31% growth, 87% gross margins and a large EUR 8.5bn TAM. The company has strong DACH momentum and an AI-ready product. The main risks are competition, regulation and macroeconomic uncertainty. Management should keep investing in sales and product while reducing services. The 7.0 times ARR valuation is reasonable for a category leader, so the team should authorise diligence.",
+    "thesis_breakers": [
+      { "title": "Competition", "evidence_ids": [] },
+      { "title": "Regulation", "evidence_ids": [] },
+      { "title": "Macroeconomy", "evidence_ids": [] }
+    ],
+    "conditions": ["Confirm growth"],
+    "dissenting_interpretation": "The company may grow more slowly."
+  }
+}

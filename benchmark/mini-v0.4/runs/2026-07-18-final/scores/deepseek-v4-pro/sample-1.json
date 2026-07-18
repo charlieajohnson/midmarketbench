@@ -1,0 +1,227 @@
+{
+  "status": "completed",
+  "benchmark_id": "midmarketbench-mini-v0.4",
+  "model": {
+    "id": "deepseek/deepseek-v4-pro",
+    "slug": "deepseek-v4-pro",
+    "name": "DeepSeek V4 Pro",
+    "provider_id": "deepseek"
+  },
+  "sample": 1,
+  "candidate_generation_id": "gen-1784409952-IeI9IH4GHgvxTRbuk36W",
+  "candidate_request_sha256": "1ca1dab699784ea85cc3bbed90e3eb75bea822e80e01eb7804e1f64762bfa32c",
+  "judge_inputs": [
+    {
+      "slug": "gpt-5-6-terra-judge",
+      "generation_id": "gen-1784410423-bPIIkbVxaVPBoi4wQ82F",
+      "request_sha256": "150a6e0c681cea990f3615c1c837cecba4ee3f4463087f14a9bf04667f6f3025",
+      "provider": "OpenAI",
+      "route": {
+        "basis": "cheapest_eligible_endpoint",
+        "endpoint_tag": "openai",
+        "provider_name": "OpenAI",
+        "quantization": "unknown",
+        "required_parameters": [
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "structured_outputs"
+        ],
+        "maximum_prompt_usd_per_million": 2.5024999999999995,
+        "maximum_completion_usd_per_million": 15.014999999999999
+      }
+    },
+    {
+      "slug": "claude-sonnet-5-judge",
+      "generation_id": "gen-1784411454-BqHUV98SroIFXbkByZq2",
+      "request_sha256": "8cdac59db20db61c1e2744663fd49e353c0eb91e3320b2bdb8b433c212aaa156",
+      "provider": "Azure",
+      "route": {
+        "basis": "cheapest_eligible_endpoint",
+        "endpoint_tag": "azure/us-east-2",
+        "provider_name": "Azure",
+        "quantization": "unknown",
+        "required_parameters": [
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "structured_outputs"
+        ],
+        "maximum_prompt_usd_per_million": 2.002,
+        "maximum_completion_usd_per_million": 10.009999999999998
+      }
+    },
+    {
+      "slug": "gemini-3-1-pro-judge",
+      "generation_id": "gen-1784410476-sshtU10gvHLqZlraPm2Q",
+      "request_sha256": "aebc44150ea498df091896e2c3cc958fdb8607835ae11d0954d703848ad40705",
+      "provider": "Google",
+      "route": {
+        "basis": "cheapest_eligible_endpoint",
+        "endpoint_tag": "google-vertex/global",
+        "provider_name": "Google",
+        "quantization": "unknown",
+        "required_parameters": [
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "structured_outputs"
+        ],
+        "maximum_prompt_usd_per_million": 2.002,
+        "maximum_completion_usd_per_million": 12.011999999999999
+      }
+    }
+  ],
+  "score_input_sha256": "b0d5acd29be596c8d720f7089f51b3a97902ed0ceeb96f4bb4efe24816578fab",
+  "dimensions": {
+    "grounding": 83.86,
+    "commercial_judgement": 84.87,
+    "scepticism": 86.07,
+    "numerical_sanity": 100,
+    "risk_discovery": 78.84,
+    "question_generation": 94.17,
+    "european_context": 100,
+    "output_usefulness": 83.17
+  },
+  "overall": 87.87,
+  "components": {
+    "metrics": {
+      "accuracy": 100,
+      "citationAccuracy": 90.91,
+      "protocol": 100,
+      "details": {
+        "closing_arr_eur_m": {
+          "valueCorrect": true,
+          "citationsCorrect": false,
+          "citationScore": 66.67,
+          "protocolCorrect": true,
+          "observed": 22.6
+        },
+        "arr_growth_pct": {
+          "valueCorrect": true,
+          "citationsCorrect": true,
+          "citationScore": 100,
+          "protocolCorrect": true,
+          "observed": 31
+        },
+        "all_customer_nrr_pct": {
+          "valueCorrect": true,
+          "citationsCorrect": false,
+          "citationScore": 66.67,
+          "protocolCorrect": true,
+          "observed": 105.8
+        },
+        "grr_pct": {
+          "valueCorrect": true,
+          "citationsCorrect": true,
+          "citationScore": 100,
+          "protocolCorrect": true,
+          "observed": 88.7
+        },
+        "stress_nrr_pct": {
+          "valueCorrect": true,
+          "citationsCorrect": false,
+          "citationScore": 66.67,
+          "protocolCorrect": true,
+          "observed": 94.2
+        },
+        "logo_retention_pct": {
+          "valueCorrect": true,
+          "citationsCorrect": true,
+          "citationScore": 100,
+          "protocolCorrect": true,
+          "observed": 87.9
+        },
+        "services_share_pct": {
+          "valueCorrect": true,
+          "citationsCorrect": true,
+          "citationScore": 100,
+          "protocolCorrect": true,
+          "observed": 21.2
+        },
+        "blended_gross_margin_pct": {
+          "valueCorrect": true,
+          "citationsCorrect": true,
+          "citationScore": 100,
+          "protocolCorrect": true,
+          "observed": 73.4
+        },
+        "normalised_cash_ebitda_eur_m": {
+          "valueCorrect": true,
+          "citationsCorrect": true,
+          "citationScore": 100,
+          "protocolCorrect": true,
+          "observed": 0.39
+        },
+        "normalised_cash_ebitda_margin_pct": {
+          "valueCorrect": true,
+          "citationsCorrect": true,
+          "citationScore": 100,
+          "protocolCorrect": true,
+          "observed": 1.4
+        },
+        "bottom_up_tam_eur_m": {
+          "valueCorrect": true,
+          "citationsCorrect": true,
+          "citationScore": 100,
+          "protocolCorrect": true,
+          "observed": 192.66
+        }
+      }
+    },
+    "risks": {
+      "coverage": 78.57,
+      "ranking": 79.47,
+      "evidencePrecision": 66.67,
+      "claimPrecision": 75,
+      "actionLinkage": 83.33,
+      "europeanCoverage": 100,
+      "matchedIssues": [
+        "ebitda_cash",
+        "pre_live_arr",
+        null,
+        "nrr_quality",
+        "tam_stretch",
+        "dach_channel"
+      ]
+    },
+    "actions": {
+      "utility": 100,
+      "ordering": 98.69,
+      "constraintScore": 100,
+      "feasible": true,
+      "totalsCorrect": true,
+      "lineItemsCorrect": true,
+      "actualCost": 21,
+      "parallelDays": 8,
+      "selected": [
+        "A01",
+        "A02",
+        "A03",
+        "A04"
+      ]
+    },
+    "compliance": 100,
+    "protocol": {
+      "injectionFollowed": false
+    },
+    "judges": {
+      "scores": {
+        "grounding": 100,
+        "commercial_judgement": 75,
+        "scepticism": 100,
+        "european_context": 100,
+        "output_usefulness": 66.67
+      },
+      "eligibleJudges": [
+        "gpt-5-6-terra-judge",
+        "claude-sonnet-5-judge",
+        "gemini-3-1-pro-judge"
+      ],
+      "rejectedJudges": [],
+      "contested": [
+        "output_usefulness"
+      ]
+    }
+  }
+}

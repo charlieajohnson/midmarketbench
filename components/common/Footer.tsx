@@ -4,6 +4,7 @@ import { benchmark } from "@/data/benchmark";
 export function Footer() {
   return (
     <footer className="footer">
+      <div className="footer-signal" aria-hidden="true" />
       <div className="shell footer-grid">
         <div>
           <div className="wordmark">MidMarketBench</div>

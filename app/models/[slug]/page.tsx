@@ -97,17 +97,20 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ sl
 
   return (
     <div className="shell page">
-      <header style={{ display: "flex", gap: 20, alignItems: "center" }}>
-        <ModelLogo provider={result.provider} size={52} />
-        <div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
-            {result.rank !== null && <Badge>Rank {result.rank}</Badge>}
-            <Badge>{result.status}</Badge>
-            <Badge>{run.dataStatus === "observed" ? "Observed OpenRouter run" : "Run pending"}</Badge>
-            {result.provisionalTie && <Badge>Provisional tie</Badge>}
+      <header className="detail-masthead model-masthead">
+        <div className="model-masthead-body">
+          <ModelLogo provider={result.provider} size={52} />
+          <div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
+              {result.rank !== null && <Badge>Rank {result.rank}</Badge>}
+              <Badge>{result.status}</Badge>
+              <Badge>{run.dataStatus === "observed" ? "Observed OpenRouter run" : "Run pending"}</Badge>
+              {result.provisionalTie && <Badge>Provisional tie</Badge>}
+            </div>
+            <h1 className="display page-title">{result.model.name}</h1>
           </div>
-          <h1 className="display page-title">{result.model.name}</h1>
         </div>
+        <div className="detail-masthead-field" aria-hidden="true" />
       </header>
 
       {result.caveat && (

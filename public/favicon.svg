@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MidMarketBench mark">
-  <rect x="4" y="4" width="56" height="56" rx="12" fill="#f6f2e8"/>
-  <rect x="18" y="12" width="16" height="40" rx="4" fill="#2f7f82"/>
-  <path d="M39 20h12M39 31h10M39 42h12" stroke="#b89452" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="26" cy="43" r="3.5" fill="#22211e"/>
+  <rect width="64" height="64" fill="#14130F"/>
+  <rect x="6" y="6" width="25" height="52" fill="#E52F45"/>
+  <circle cx="43.5" cy="20.5" r="14.5" fill="#F2C105"/>
+  <rect x="31" y="35" width="27" height="23" fill="#F89A15"/>
+  <circle cx="31" cy="35" r="9" fill="#EB5D4B"/>
+  <rect x="12" y="12" width="7" height="40" fill="#F4F2EC"/>
 </svg>

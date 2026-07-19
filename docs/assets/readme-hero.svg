@@ -1,139 +1,158 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="MidMarketBench product overview">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title description">
+  <title id="title">MidMarketBench observed benchmark overview</title>
+  <desc id="description">An institutional chromatic overview of the 18 July 2026 OpenRouter mini benchmark, led by Kimi K3 with a provisional tie.</desc>
   <defs>
-    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#eef4ef" />
-      <stop offset="55%" stop-color="#dfe9e4" />
-      <stop offset="100%" stop-color="#f6efe4" />
-    </linearGradient>
+    <clipPath id="chromatic-field">
+      <rect x="674" y="74" width="526" height="486" />
+    </clipPath>
     <style>
-      .title {
-        font:
-          800 58px Inter,
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
-        fill: #17201d;
+      .brand {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: -0.035em;
       }
-      .subtitle {
-        font:
-          500 24px Inter,
-          ui-sans-serif,
-          system-ui,
-          sans-serif;
-        fill: #40504a;
+      .run {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 650;
+        letter-spacing: 0.12em;
       }
-      .label {
-        font:
-          700 13px Inter,
-          ui-sans-serif,
-          system-ui,
-          sans-serif;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        fill: #6d825f;
+      .kicker {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.11em;
       }
-      .copy {
-        font:
-          500 18px Inter,
-          ui-sans-serif,
-          system-ui,
-          sans-serif;
-        fill: #33413b;
+      .display {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 50px;
+        font-weight: 720;
+        letter-spacing: -0.045em;
       }
-      .small {
-        font:
-          500 14px Inter,
-          ui-sans-serif,
-          system-ui,
-          sans-serif;
-        fill: #5f6d66;
+      .body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 19px;
+        font-weight: 500;
       }
-      .mono {
-        font:
-          700 18px "SFMono-Regular",
-          Consolas,
-          monospace;
-        fill: #17201d;
+      .fact-label {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.11em;
       }
-      .score {
-        font:
-          800 28px Inter,
-          ui-sans-serif,
-          system-ui,
-          sans-serif;
-        fill: #17201d;
+      .fact-value {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 680;
+      }
+      .ledger-title {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: 720;
+        letter-spacing: 0.06em;
+      }
+      .ledger-copy {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 610;
+      }
+      .ledger-score {
+        font-family: Menlo, Consolas, monospace;
+        font-size: 20px;
+        font-weight: 760;
+      }
+      .ledger-small {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.025em;
       }
     </style>
   </defs>
-  <rect width="1200" height="560" rx="32" fill="url(#sky)" />
-  <path
-    d="M0 348 C150 294 259 310 374 354 C489 398 622 395 756 343 C889 291 1017 294 1200 362 L1200 560 L0 560 Z"
-    fill="#9fb29a"
-    opacity=".6"
-  />
-  <path
-    d="M0 426 C160 378 292 382 430 438 C586 502 735 492 884 429 C1004 379 1092 381 1200 420 L1200 560 L0 560 Z"
-    fill="#6d825f"
-    opacity=".55"
-  />
-  <g transform="translate(72 78)">
-    <text class="label" x="0" y="0">MidMarketBench</text>
-    <text class="title" x="0" y="72">Private-market AI,</text>
-    <text class="title" x="0" y="136">scored like work.</text>
-    <text class="subtitle" x="0" y="190">Tests whether frontier models can produce useful</text>
-    <text class="subtitle" x="0" y="224">European lower-mid-market diligence work.</text>
-    <g transform="translate(0 280)">
-      <rect width="160" height="78" rx="16" fill="#ffffff" opacity=".82" />
-      <text class="label" x="22" y="28">Models</text>
-      <text class="score" x="22" y="60">9 asked</text>
-    </g>
-    <g transform="translate(180 280)">
-      <rect width="206" height="78" rx="16" fill="#ffffff" opacity=".82" />
-      <text class="label" x="22" y="28">Dimensions</text>
-      <text class="score" x="22" y="60">8 weighted</text>
-    </g>
-    <g transform="translate(406 280)">
-      <rect width="190" height="78" rx="16" fill="#ffffff" opacity=".82" />
-      <text class="label" x="22" y="28">Status</text>
-      <text class="score" x="22" y="60">Observed</text>
+
+  <rect width="1200" height="560" rx="8" fill="#F4F2EC" />
+
+  <g aria-label="Header">
+    <path d="M8 0h1184a8 8 0 0 1 8 8v66H0V8a8 8 0 0 1 8-8Z" fill="#14130F" />
+    <text class="brand" x="54" y="47" fill="#F4F2EC">MidMarketBench</text>
+    <circle cx="925" cy="37" r="5" fill="#F2C105" />
+    <text class="run" x="942" y="42" fill="#F4F2EC">OBSERVED · 18 JUL 2026</text>
+  </g>
+
+  <g aria-label="Benchmark summary" transform="translate(54 125)">
+    <text class="kicker" x="0" y="0" fill="#14130F">EUROPEAN B2B SOFTWARE · OPENROUTER MINI BENCHMARK</text>
+    <text class="display" x="0" y="77" fill="#14130F">Investment judgement,</text>
+    <text class="display" x="0" y="139" fill="#14130F">benchmarked.</text>
+    <rect x="0" y="180" width="78" height="5" fill="#E52F45" />
+    <text class="body" x="0" y="226" fill="#14130F">Can a frontier model turn a sparse diligence packet</text>
+    <text class="body" x="0" y="253" fill="#14130F">into work an investment team can use?</text>
+
+    <g transform="translate(0 300)" aria-label="Run facts">
+      <line x1="0" x2="590" y1="0" y2="0" stroke="#14130F" stroke-width="1.5" />
+      <line x1="0" x2="590" y1="76" y2="76" stroke="#14130F" stroke-width="1.5" />
+      <line x1="147.5" x2="147.5" y1="0" y2="76" stroke="#14130F" />
+      <line x1="295" x2="295" y1="0" y2="76" stroke="#14130F" />
+      <line x1="442.5" x2="442.5" y1="0" y2="76" stroke="#14130F" />
+
+      <text class="fact-label" x="0" y="25" fill="#6B6963">CASE</text>
+      <text class="fact-value" x="0" y="53" fill="#14130F">Norwyn</text>
+
+      <text class="fact-label" x="168" y="25" fill="#6B6963">TASKS</text>
+      <text class="fact-value" x="168" y="53" fill="#14130F">4 closed-book</text>
+
+      <text class="fact-label" x="315" y="25" fill="#6B6963">ROSTER</text>
+      <text class="fact-value" x="315" y="53" fill="#14130F">9 requested</text>
+
+      <text class="fact-label" x="463" y="25" fill="#6B6963">RANKED</text>
+      <text class="fact-value" x="463" y="53" fill="#14130F">8 models</text>
     </g>
   </g>
-  <rect x="708" y="88" width="430" height="404" rx="28" fill="#26322f" opacity=".13" />
-  <g transform="translate(692 70)">
-    <rect width="430" height="404" rx="28" fill="#fbfcf9" />
-    <text class="label" x="34" y="48">18 July 2026 mini run</text>
-    <line x1="34" x2="396" y1="72" y2="72" stroke="#d3ddd5" stroke-width="2" />
-    <g transform="translate(34 102)">
-      <text class="mono" x="0" y="0">1</text>
-      <text class="copy" x="42" y="0">Fresh synthetic case</text>
-      <text class="score" x="314" y="4">1</text>
-      <rect x="42" y="18" width="300" height="8" rx="4" fill="#e4ebe4" />
-      <rect x="42" y="18" width="252" height="8" rx="4" fill="#6d825f" />
+
+  <g aria-label="Chromatic field" clip-path="url(#chromatic-field)">
+    <rect x="674" y="74" width="526" height="486" fill="#E52F45" />
+    <circle cx="1124" cy="122" r="183" fill="#F2C105" />
+    <rect x="674" y="265" width="269" height="295" fill="#F89A15" />
+    <rect x="943" y="346" width="257" height="214" fill="#EB5D4B" />
+    <circle cx="928" cy="554" r="95" fill="#F2C105" />
+  </g>
+
+  <g aria-label="Observed leaderboard" transform="translate(724 118)">
+    <rect width="426" height="394" rx="5" fill="#F4F2EC" stroke="#14130F" stroke-width="2" />
+    <text class="ledger-title" x="26" y="37" fill="#14130F">OBSERVED LEADERBOARD</text>
+    <text class="ledger-small" x="400" y="37" text-anchor="end" fill="#6B6963">v0.4-mini</text>
+    <line x1="26" x2="400" y1="58" y2="58" stroke="#14130F" stroke-width="1.5" />
+
+    <text class="ledger-small" x="26" y="82" fill="#6B6963">RANK</text>
+    <text class="ledger-small" x="77" y="82" fill="#6B6963">MODEL</text>
+    <text class="ledger-small" x="400" y="82" text-anchor="end" fill="#6B6963">OVERALL</text>
+
+    <g transform="translate(0 95)">
+      <rect x="1" width="424" height="55" fill="#F2C105" />
+      <text class="ledger-score" x="26" y="35" fill="#14130F">01</text>
+      <text class="ledger-copy" x="77" y="35" fill="#14130F">Kimi K3</text>
+      <text class="ledger-score" x="400" y="35" text-anchor="end" fill="#14130F">96.28</text>
     </g>
-    <g transform="translate(34 168)">
-      <text class="mono" x="0" y="0">2</text>
-      <text class="copy" x="42" y="0">Samples per model</text>
-      <text class="score" x="314" y="4">2</text>
-      <rect x="42" y="18" width="300" height="8" rx="4" fill="#e4ebe4" />
-      <rect x="42" y="18" width="248" height="8" rx="4" fill="#75858b" />
+    <g transform="translate(0 150)">
+      <line x1="26" x2="400" y1="55" y2="55" stroke="#B9B6AF" />
+      <text class="ledger-score" x="26" y="35" fill="#14130F">02</text>
+      <text class="ledger-copy" x="77" y="35" fill="#14130F">Grok 4.5</text>
+      <text class="ledger-score" x="400" y="35" text-anchor="end" fill="#14130F">96.27</text>
     </g>
-    <g transform="translate(34 234)">
-      <text class="mono" x="0" y="0">3</text>
-      <text class="copy" x="42" y="0">Closed-book tasks</text>
-      <text class="score" x="314" y="4">4</text>
-      <rect x="42" y="18" width="300" height="8" rx="4" fill="#e4ebe4" />
-      <rect x="42" y="18" width="238" height="8" rx="4" fill="#b27b4d" />
+    <g transform="translate(0 205)">
+      <line x1="26" x2="400" y1="55" y2="55" stroke="#B9B6AF" />
+      <text class="ledger-score" x="26" y="35" fill="#14130F">03</text>
+      <text class="ledger-copy" x="77" y="35" fill="#14130F">GPT-5.6 Sol</text>
+      <text class="ledger-score" x="400" y="35" text-anchor="end" fill="#14130F">95.50</text>
     </g>
-    <g transform="translate(34 300)">
-      <text class="mono" x="0" y="0">4</text>
-      <text class="copy" x="42" y="0">Local budget cap</text>
-      <text class="score" x="314" y="4">$7</text>
-      <rect x="42" y="18" width="300" height="8" rx="4" fill="#e4ebe4" />
-      <rect x="42" y="18" width="235" height="8" rx="4" fill="#9a7f5f" />
+
+    <g transform="translate(26 285)">
+      <rect width="374" height="1.5" fill="#14130F" />
+      <text class="ledger-small" x="0" y="28" fill="#6B6963">STATUS</text>
+      <text class="ledger-copy" x="0" y="52" fill="#14130F">Provisional top group</text>
+      <text class="ledger-small" x="374" y="28" text-anchor="end" fill="#6B6963">SETTLED SPEND</text>
+      <text class="ledger-copy" x="374" y="52" text-anchor="end" fill="#14130F">$5.315590</text>
     </g>
-    <text class="small" x="34" y="374">Observed OpenRouter outputs; directional results.</text>
+    <text class="ledger-small" x="26" y="374" fill="#6B6963">Two samples per completed model · directional result</text>
   </g>
 </svg>

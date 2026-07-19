@@ -51,23 +51,36 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
           </button>
         </div>
         <div className="rank-card-list">
-          {sorted.map((row) => {
-            const topDimensions = [...dimensions].sort((a, b) => row.scores[b.key] - row.scores[a.key]).slice(0, 3);
-            return (
-              <article className="rank-card" key={row.model.id}>
-                <div className="rank-card-head">
-                  <div className="rank-stamp">#{row.rank}</div>
-                  <Link className="model-cell" href={`/models/${row.model.slug}`}>
-                    <ModelLogo provider={row.provider} />
-                    <span className="model-cell-copy">
-                      <span className="model-cell-name">{row.model.name}</span>
-                      <span className="model-cell-provider">{row.provider.name}</span>
-                    </span>
+          {sorted.map((row) => (
+            <details className="rank-card rank-disclosure" key={row.model.id}>
+              <summary className="rank-card-summary">
+                <span className="rank-stamp">#{row.rank}</span>
+                <span className="rank-card-identity">
+                  <span className="model-cell-name">{row.model.name}</span>
+                  <span className="model-cell-provider">{row.provider.name}</span>
+                </span>
+                <span className="rank-card-score mono">{roundScore(row.overall).toFixed(1)}</span>
+                <span className="rank-card-summary-meta">
+                  <span className="mono">Range {scoreRange(row)}</span>
+                  {row.provisionalTie && <span className="rank-card-status">Provisional tie</span>}
+                  <span className="rank-card-status">
+                    {row.samplesCompleted === row.samplesRequested ? "Complete" : "Partial"}
+                  </span>
+                </span>
+                <span className="rank-card-toggle" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <div className="rank-card-panel">
+                <div className="rank-card-panel-head">
+                  <span>Dimension scores</span>
+                  <Link className="rank-card-model-link" href={`/models/${row.model.slug}`}>
+                    <ModelLogo provider={row.provider} size={24} />
+                    View model record
                   </Link>
-                  <div className="rank-card-score mono">{roundScore(row.overall).toFixed(1)}</div>
                 </div>
                 <div className="rank-card-bars">
-                  {topDimensions.map((dimension) => (
+                  {dimensions.map((dimension) => (
                     <div className="rank-card-bar" key={dimension.key}>
                       <span>{dimension.label}</span>
                       <span className="bar-track">
@@ -77,28 +90,16 @@ export function LeaderboardTable({ rows, dimensions }: { rows: LeaderboardRow[];
                     </div>
                   ))}
                 </div>
-                <div className="rank-card-meta" style={{ flexWrap: "wrap", gap: 8 }}>
+                <div className="rank-card-meta rank-card-route-badges">
                   <Badge>{row.mode}</Badge>
                   <Badge>
                     n={row.samplesCompleted}/{row.samplesRequested}
                   </Badge>
-                  <Badge>Range {scoreRange(row)}</Badge>
-                  {row.provisionalTie && <Badge>Provisional tie</Badge>}
                   {row.caveat && <Badge>Route caveat</Badge>}
                 </div>
-                <details className="rank-card-details">
-                  <summary>All dimensions</summary>
-                  <div className="rank-card-all">
-                    {dimensions.map((dimension) => (
-                      <span key={dimension.key}>
-                        {dimension.shortLabel} <strong>{roundScore(row.scores[dimension.key])}</strong>
-                      </span>
-                    ))}
-                  </div>
-                </details>
-              </article>
-            );
-          })}
+              </div>
+            </details>
+          ))}
         </div>
       </div>
       <div className="table-wrap leaderboard-table-wrap">

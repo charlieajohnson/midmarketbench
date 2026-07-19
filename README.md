@@ -2,8 +2,8 @@
 
 Observed frontier-model benchmarking for European lower-mid-market investment work.
 
-[![Live product](https://img.shields.io/badge/live-midmarketbench.vercel.app-6d825f?style=for-the-badge)](https://midmarketbench.vercel.app)
-[![Methodology](https://img.shields.io/badge/method-v0.4--mini-c27c46?style=for-the-badge)](#methodology)
+[![Live product](https://img.shields.io/badge/live-midmarketbench.vercel.app-e52f45?style=for-the-badge)](https://midmarketbench.vercel.app)
+[![Methodology](https://img.shields.io/badge/method-v0.4--mini-f89a15?style=for-the-badge)](#methodology)
 [![Next.js](https://img.shields.io/badge/Next.js-15.5-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 

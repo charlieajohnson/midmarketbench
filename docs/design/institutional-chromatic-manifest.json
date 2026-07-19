@@ -1,0 +1,145 @@
+{
+  "id": "midmarketbench-hero-score-planes-001",
+  "project": "midmarketbench",
+  "assetSlot": "hero-field",
+  "status": "promoted",
+  "createdAt": "2026-07-19T00:16:08Z",
+  "sourceReferences": [
+    "local-reference:13149858-4999-4b40-a734-9041e54381eb.webp",
+    "local-reference:9a9724f3-2077-4d87-bf56-e15d4264de3b.webp",
+    "local-reference:14574bc0-eab2-43ac-b15f-d43f4614af61.webp"
+  ],
+  "rights": {
+    "productionAssetOrigin": "original-deterministic",
+    "referenceUse": "visual-reference-only",
+    "publicationApproved": true,
+    "notes": "The released fields are original CSS compositions. The supplied references are not copied, cropped, recompressed or published."
+  },
+  "sourceType": "css",
+  "recipeVersion": "1.0.0",
+  "palette": {
+    "neutrals": ["#F4F2EC", "#FCFAF4", "#14130F", "#4C4840", "#C8C4BB"],
+    "signals": ["#F2C105", "#F89A15", "#EB5D4B", "#E52F45"]
+  },
+  "recipe": {
+    "geometry": ["stacked-rectangles", "cropped-circle", "bounded-field"],
+    "gradientType": "radial-linear-composite",
+    "stops": [
+      { "colour": "#F2C105", "position": 0 },
+      { "colour": "#F89A15", "position": 0.3 },
+      { "colour": "#EB5D4B", "position": 0.68 },
+      { "colour": "#E52F45", "position": 1 }
+    ],
+    "grain": 0.05,
+    "safeZone": "All product copy remains on independent paper or ink surfaces.",
+    "motion": "static",
+    "seed": 23,
+    "implementationNotes": "CSS gradients, rectangles, circles and pseudo-element grain. Signature colours are not used as score or status semantics.",
+    "fallbackNotes": "The static CSS field is the default and does not depend on JavaScript."
+  },
+  "variants": [
+    {
+      "variantId": "hero-score-planes-a",
+      "path": "app/globals.css#.hero-art",
+      "width": 1440,
+      "height": 900,
+      "scores": {
+        "visualIdentity": 5,
+        "geometricIntent": 5,
+        "paletteFidelity": 5,
+        "cropUsability": 5,
+        "textSafety": 5,
+        "grainQuality": 4,
+        "institutionalRestraint": 5,
+        "performance": 5
+      },
+      "cropRecipes": {
+        "desktop": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "notes": "A split paper and field masthead at 1440 by 900."
+        },
+        "mobile": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "notes": "A purpose-built 390 by 844 composition with fewer forms below the copy."
+        },
+        "og": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "notes": "A separate deterministic 1200 by 630 social composition."
+        }
+      },
+      "reviewNotes": "Promoted after production-build desktop, mobile, no-script, print, reduced-motion, contrast and overflow checks."
+    }
+  ],
+  "proofs": {
+    "desktop": {
+      "path": "docs/design/proofs/hero-desktop.webp",
+      "width": 1440,
+      "height": 900,
+      "reviewed": true,
+      "reviewedAt": "2026-07-19T00:16:08Z",
+      "notes": "No overflow or console errors. Product copy remains on the paper panel."
+    },
+    "mobile": {
+      "path": "docs/design/proofs/hero-mobile.webp",
+      "width": 390,
+      "height": 844,
+      "reviewed": true,
+      "reviewedAt": "2026-07-19T00:16:08Z",
+      "notes": "No horizontal overflow. The mobile composition uses fewer forms and preserves the full headline."
+    },
+    "og": {
+      "path": "docs/design/proofs/hero-og.webp",
+      "width": 1200,
+      "height": 630,
+      "reviewed": true,
+      "reviewedAt": "2026-07-19T00:16:08Z",
+      "notes": "The Open Graph route returned a valid 1200 by 630 image."
+    }
+  },
+  "fallbacks": {
+    "reducedMotion": {
+      "strategy": "same-static-source",
+      "path": "app/globals.css#@media-prefers-reduced-motion",
+      "verified": true,
+      "notes": "Fields are static and the reduced-motion rule disables residual interface animation."
+    },
+    "saveData": {
+      "strategy": "css-static",
+      "path": "app/globals.css#.hero-art",
+      "verified": true,
+      "notes": "No raster field asset or scripted renderer is requested."
+    },
+    "noScript": {
+      "strategy": "css-static",
+      "path": "app/globals.css#.hero-art",
+      "verified": true,
+      "notes": "The complete headline and field rendered with JavaScript disabled."
+    },
+    "print": {
+      "strategy": "css-static",
+      "path": "app/globals.css#.hero-art",
+      "verified": true,
+      "notes": "Print-media emulation retained the static field with no horizontal overflow."
+    },
+    "openGraph": {
+      "strategy": "same-static-source",
+      "path": "app/opengraph-image.tsx",
+      "verified": true,
+      "notes": "The route returned HTTP 200 and a valid 1200 by 630 image."
+    }
+  },
+  "approval": {
+    "approvedBy": "Codex QA",
+    "approvedAt": "2026-07-19T00:16:08Z",
+    "notes": "Technically promoted after session QA. Charlie retains final taste approval."
+  }
+}

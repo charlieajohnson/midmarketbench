@@ -39,14 +39,17 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
   ];
   return (
     <div className="shell page">
-      <header>
-        <div style={{ display: "flex", gap: 8, marginBottom: 18 }}>
-          <Badge>Synthetic case</Badge>
-          <Badge>{isObservedCase ? "Scored · 18 Jul 2026" : "Unscored legacy example"}</Badge>
-          <Badge>{benchmarkCase.difficulty}</Badge>
+      <header className="detail-masthead">
+        <div className="detail-masthead-copy">
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
+            <Badge>Synthetic case</Badge>
+            <Badge>{isObservedCase ? "Scored · 18 Jul 2026" : "Unscored legacy example"}</Badge>
+            <Badge>{benchmarkCase.difficulty}</Badge>
+          </div>
+          <h1 className="display page-title">{benchmarkCase.name}</h1>
+          <p className="lede">{benchmarkCase.summary}</p>
         </div>
-        <h1 className="display page-title">{benchmarkCase.name}</h1>
-        <p className="lede">{benchmarkCase.summary}</p>
+        <div className="detail-masthead-field" aria-hidden="true" />
       </header>
       <section className="section-tight">
         <dl className="definition-list">

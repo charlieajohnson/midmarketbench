@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-18T23:41:31Z",
+  "title": "Design System: MidMarketBench",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#14130F",
+        "tonalRamp": ["#14130F", "#302E27", "#4C4940", "#6A665A", "#898579", "#AAA69D", "#CDCAC3", "#F1EFEA"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#4C4840",
+        "tonalRamp": ["#171511", "#332F29", "#4C4840", "#6A655C", "#88837B", "#A8A49D", "#CBC8C2", "#F0EEEA"]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Canvas",
+        "canonical": "#F4F2EC",
+        "tonalRamp": ["#22201B", "#423F37", "#625E54", "#827E73", "#A39F95", "#C4C0B7", "#E0DDD6", "#F4F2EC"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#FCFAF4",
+        "tonalRamp": ["#24221D", "#464239", "#686359", "#8A8579", "#ACA79D", "#CEC9C0", "#E8E4DC", "#FCFAF4"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#C8C4BB",
+        "tonalRamp": ["#201F1B", "#403E37", "#605E55", "#817E74", "#A19E95", "#C1BEB6", "#DEDBD5", "#F5F3EF"]
+      },
+      "signal-red": {
+        "role": "primary",
+        "displayName": "Signal Red",
+        "canonical": "#E52F45",
+        "tonalRamp": ["#3A0710", "#6A0F1F", "#99182D", "#C5233A", "#E52F45", "#ED6675", "#F49DA7", "#FBD6DA"]
+      },
+      "signal-coral": {
+        "role": "secondary",
+        "displayName": "Signal Coral",
+        "canonical": "#EB5D4B",
+        "tonalRamp": ["#3E0E09", "#711C13", "#A12D21", "#CD4435", "#EB5D4B", "#F08374", "#F5ADA2", "#FAD9D3"]
+      },
+      "signal-orange": {
+        "role": "secondary",
+        "displayName": "Signal Orange",
+        "canonical": "#F89A15",
+        "tonalRamp": ["#3E2100", "#713E00", "#A45C00", "#D17A07", "#F89A15", "#FAB64F", "#FCD08B", "#FEEAC8"]
+      },
+      "signal-yellow": {
+        "role": "primary",
+        "displayName": "Signal Yellow",
+        "canonical": "#F2C105",
+        "tonalRamp": ["#352A00", "#625000", "#917700", "#C09F00", "#F2C105", "#F6D34C", "#F9E48B", "#FCF4CC"]
+      },
+      "signal-deep": {
+        "role": "primary",
+        "displayName": "Signal Deep",
+        "canonical": "#8F1833",
+        "tonalRamp": ["#2C030D", "#500819", "#741025", "#8F1833", "#B2324E", "#D26277", "#E9A0AC", "#F8DCE1"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Home hero statements only, always Roman." },
+      "headline": { "displayName": "Headline", "purpose": "Page and section headings, always Roman." },
+      "title": { "displayName": "Title", "purpose": "Models, cards and component labels." },
+      "body": { "displayName": "Body", "purpose": "Explanations and descriptive copy." },
+      "label": { "displayName": "Label", "purpose": "Operational navigation and status." },
+      "data": { "displayName": "Data", "purpose": "Scores, costs, dates, hashes and routes." }
+    },
+    "shadows": [
+      { "name": "focus-lift", "value": "0 0 0 3px rgba(229, 47, 69, 0.24)", "purpose": "Keyboard focus only." },
+      {
+        "name": "image-plate",
+        "value": "0 18px 50px rgba(20, 19, 15, 0.14)",
+        "purpose": "One large image plate per page at most."
+      }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Entry and state changes." },
+      { "name": "fast", "value": "160ms", "purpose": "Hover and focus response." },
+      { "name": "standard", "value": "280ms", "purpose": "Drawer and panel transitions." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "640px" },
+      { "name": "tablet", "value": "860px" },
+      { "name": "wide", "value": "1180px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main route into the observed benchmark.",
+      "html": "<button class=\"ds-btn-primary\">View leaderboard</button>",
+      "css": ".ds-btn-primary{border:1px solid #14130F;border-radius:2px;background:#14130F;color:#F4F2EC;padding:12px 18px;font:600 .75rem/1.2 Geist,Arial,sans-serif;letter-spacing:.04em;transition:background 160ms,transform 160ms}.ds-btn-primary:hover{background:#8F1833;transform:translateY(-1px)}.ds-btn-primary:focus-visible{outline:0;box-shadow:0 0 0 3px rgba(229,47,69,.24)}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A flat supporting action on light or yellow surfaces.",
+      "html": "<button class=\"ds-btn-secondary\">Inspect scored case</button>",
+      "css": ".ds-btn-secondary{border:1px solid #14130F;border-radius:2px;background:transparent;color:#14130F;padding:12px 18px;font:600 .75rem/1.2 Geist,Arial,sans-serif;letter-spacing:.04em;transition:background 160ms,transform 160ms}.ds-btn-secondary:hover{background:#FCFAF4;transform:translateY(-1px)}.ds-btn-secondary:focus-visible{outline:0;box-shadow:0 0 0 3px rgba(229,47,69,.24)}"
+    },
+    {
+      "name": "Observed Status",
+      "kind": "chip",
+      "refersTo": "status-observed",
+      "description": "A compact text-first provenance status.",
+      "html": "<span class=\"ds-status\"><span aria-hidden=\"true\"></span>Observed run</span>",
+      "css": ".ds-status{display:inline-flex;align-items:center;gap:8px;border:1px solid #14130F;border-radius:999px;background:#F2C105;color:#14130F;padding:6px 10px;font:600 .72rem/1 Geist,Arial,sans-serif}.ds-status span{width:7px;height:7px;border-radius:50%;background:#8F1833}"
+    },
+    {
+      "name": "Evidence Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat reading surface for case, task and method evidence.",
+      "html": "<article class=\"ds-card\"><span>Case 01</span><h3>Norwyn Controls</h3><p>Fresh synthetic holdout with observed outputs.</p></article>",
+      "css": ".ds-card{border:1px solid #C8C4BB;border-radius:4px;background:#FCFAF4;color:#14130F;padding:24px;font-family:Geist,Arial,sans-serif}.ds-card span{font:500 .72rem/1.2 'Geist Mono',monospace}.ds-card h3{margin:24px 0 8px;font-size:1.1rem;line-height:1.2}.ds-card p{margin:0;color:#4C4840;line-height:1.55}.ds-card:hover{border-color:#14130F}"
+    },
+    {
+      "name": "Institutional Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Compact, rule-bound primary navigation.",
+      "html": "<nav class=\"ds-nav\"><strong>MidMarketBench</strong><a href=\"#\">Leaderboard</a><a href=\"#\" aria-current=\"page\">Models</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:24px;border-top:3px solid #E52F45;border-bottom:1px solid #14130F;background:#F4F2EC;color:#14130F;padding:14px 18px;font-family:Geist,Arial,sans-serif}.ds-nav strong{margin-right:auto;font-weight:600}.ds-nav a{position:relative;color:#4C4840;font-size:.78rem;text-decoration:none}.ds-nav a[aria-current=page]{color:#14130F}.ds-nav a[aria-current=page]:after{position:absolute;right:0;bottom:-15px;left:0;height:2px;background:#E52F45;content:''}.ds-nav a:focus-visible{outline:2px solid #E52F45;outline-offset:4px}"
+    },
+    {
+      "name": "Calibration Plate",
+      "kind": "custom",
+      "refersTo": "calibration-plate",
+      "description": "The single expressive field anchoring a page.",
+      "html": "<div class=\"ds-plate\"><span class=\"ds-plate-orbit\"></span><span class=\"ds-plate-block\"></span></div>",
+      "css": ".ds-plate{position:relative;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg,#F2C105 0 18%,#F89A15 44%,#E52F45 74%);box-shadow:0 18px 50px rgba(20,19,15,.14)}.ds-plate-orbit{position:absolute;right:-10%;bottom:-24%;width:62%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F2C105,#EB5D4B 48%,#E52F45 76%)}.ds-plate-block{position:absolute;top:16%;left:18%;width:42%;height:48%;background:linear-gradient(135deg,#F2C105,#F89A15 46%,#E52F45)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Calibration Hall",
+    "overview": "MidMarketBench combines the order of an institutional research room with saturated geometric fields that behave like calibration plates. Red, coral, orange and yellow carry identity and energy. Neutral ledger surfaces carry evidence. The contrast is deliberate: expression at the frame, restraint at the point of judgement.",
+    "keyCharacteristics": [
+      "Saturated warm-spectrum geometric plates with visible grain.",
+      "Flat, fine-rule information surfaces and compact institutional controls.",
+      "Newsreader Roman for major statements, Geist for the working interface.",
+      "Monospaced numerals only where provenance or comparison benefits.",
+      "One dominant composition per viewport and no ornamental effect stacking."
+    ],
+    "rules": [
+      {
+        "name": "The Controlled Spectrum Rule",
+        "body": "Every coloured field must stay within red, coral, orange and yellow. No blue, green, purple or rainbow extension is permitted in the identity layer.",
+        "section": "colors"
+      },
+      {
+        "name": "The Upright Authority Rule",
+        "body": "Headlines, descriptions and quotations remain Roman. Italics are prohibited unless they convey a literal editorial distinction that cannot be expressed semantically.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Evidence Rule",
+        "body": "Tables, cards and provenance notices never use ambient card shadows. Boundaries and hierarchy must survive in print.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Signal Red, Signal Coral, Signal Orange and Signal Yellow as one controlled spectrum.",
+      "Do keep evidence surfaces on Canvas or Surface with Ink text and 1px rules.",
+      "Do set major statements in Newsreader 400 Roman and working copy in Geist 400 to 600.",
+      "Do preserve visible status text, table semantics, focus states and reduced-motion behaviour.",
+      "Do use one dominant geometric composition per viewport."
+    ],
+    "donts": [
+      "Don't return to Humanist Compute Atelier or Old Master painterly scenes.",
+      "Don't use generic AI SaaS pages with soft blue gradients, floating glass cards or vague claims.",
+      "Don't use beige luxury-editorial styling or serif italics as a proxy for authority.",
+      "Don't use dark cyber-terminal aesthetics, neon grids or dashboard cosplay.",
+      "Don't use rainbow gradients or colours outside the controlled warm spectrum in the identity layer.",
+      "Don't use italics in headlines or descriptive copy.",
+      "Don't repeat uppercase microtype as decoration rather than useful metadata."
+    ]
+  }
+}

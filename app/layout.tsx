@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import { Footer } from "@/components/common/Footer";
 import { TopNav } from "@/components/nav/TopNav";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-newsreader",
+  style: ["normal"],
+  weight: ["400", "500"],
+});
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
@@ -26,7 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB">
-      <body className={`${fraunces.variable} ${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${newsreader.variable} ${geistSans.variable} ${geistMono.variable}`}>
         <TopNav />
         <main>{children}</main>
         <Footer />

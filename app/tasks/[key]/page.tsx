@@ -29,12 +29,15 @@ export default async function TaskDetailPage({ params }: { params: Promise<{ key
   if (!task) notFound();
   return (
     <div className="shell page">
-      <header>
-        <Badge>Closed-book</Badge>
-        <h1 className="display page-title" style={{ marginTop: 18 }}>
-          {task.name}
-        </h1>
-        <p className="lede">{task.prompt}</p>
+      <header className="detail-masthead">
+        <div className="detail-masthead-copy">
+          <Badge>Closed-book</Badge>
+          <h1 className="display page-title" style={{ marginTop: 18 }}>
+            {task.name}
+          </h1>
+          <p className="lede">{task.prompt}</p>
+        </div>
+        <div className="detail-masthead-field" aria-hidden="true" />
       </header>
       <section className="section-tight">
         <SyntheticBanner dismissible={false} />
